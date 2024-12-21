@@ -14,7 +14,7 @@ export class SkillsComponent implements OnInit {
 
     ngOnInit() {
 
-      this.skills =  this.profileService.skills()
+      this.skills =  this.profileService.getSkills()
     }
 
 }

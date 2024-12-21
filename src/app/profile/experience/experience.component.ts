@@ -14,6 +14,6 @@ workexp: any
 
     ngOnInit() {
 
-      this.workexp =  this.profileService.exprience()
+      this.workexp =  this.profileService.getExperience();
     }
 }
