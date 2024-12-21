@@ -10,11 +10,11 @@ export class AboutComponent implements OnInit {
 about1: any
 about2: any
 
-constructor(private profileService:ProfileService) { }
+constructor(private profileService: ProfileService) { }
 
   ngOnInit() {
-    this.about1 =  this.profileService.about
-    this.about2 =  this.profileService.about2
+    this.about1 =  this.profileService.about1;
+    this.about2 =  this.profileService.about2;
   }
 
 }

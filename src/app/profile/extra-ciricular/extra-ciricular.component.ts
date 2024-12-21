@@ -10,6 +10,6 @@ export class ExtraCiricularComponent implements OnInit {
   extras: any
   constructor(private profileService: ProfileService) { }
   ngOnInit() {
-    this.extras = this.profileService.extraCircular()
+    this.extras = this.profileService.getExtraCircular()
   }
 }

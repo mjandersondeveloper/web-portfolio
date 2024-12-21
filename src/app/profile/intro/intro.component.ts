@@ -12,7 +12,7 @@ export class IntroComponent implements OnInit {
 
   ngOnInit() {
 
-    this.cvUrl =  this.profileService.resumeurl
+    this.cvUrl =  this.profileService.resumeDownloadUrl
   }
 
 }
