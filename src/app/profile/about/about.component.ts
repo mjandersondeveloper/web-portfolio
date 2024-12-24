@@ -7,14 +7,15 @@ import { ProfileService } from '../profile.service';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
-about1: any
-about2: any
+aboutDescription = '';
+personalInformation: any;
 
-constructor(private profileService: ProfileService) { }
+  constructor(
+    private profileService: ProfileService
+  ) { }
 
   ngOnInit() {
-    this.about1 =  this.profileService.about1;
-    this.about2 =  this.profileService.about2;
+    this.aboutDescription =  this.profileService.aboutDescription;
+    this.personalInformation = this.profileService.personalInformation;
   }
-
 }

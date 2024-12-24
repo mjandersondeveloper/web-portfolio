@@ -12,14 +12,36 @@ export class ProfileService {
     private http: HttpClient
   ) { }
 
-  about1 = `Bullet 1 .
-  Bullet 2 .
-  Bullet 3 .
-  Bullet 4`;
-
-  about2 = 'Description here';
+  aboutDescription = `Senior software engineer with 6+ years of experience in leveraging various tools and technologies to 
+  enhance business productivity. Proficient in software development, design, and testing, with a strong foundation 
+  in agile development methodologies. Excellent communication skills, enabling effective collaboration with engineering 
+  teams and business partners. Experienced in working with JavaScript and Java, utilizing Angular and SpringBoot frameworks 
+  to build robust applications.`
   resumeDownloadUrl = 'https://drive.google.com/file/d/12CYyyYLDHjG8bK0RfZARciSg8czH9IzY/view?usp=drive_link';
 
+  personalInformation: any = [
+    {
+      title: 'Residence:',
+      description: 'Columbus, OH'
+    },
+    {
+      title: 'Employment:',
+      description: 'Nationwide Insurance'
+    },
+    {
+      title: 'Hobbies:',
+      description: 'Bowling, Gaming, Coding, Kickball'
+    },
+    {
+      title: 'Email:',
+      description: 'mjandersondeveloper@gmail.com'
+    },
+    {
+      title: 'Phone:',
+      description: '(330) 247-8166'
+    }
+  ]
+  
   projects:any = [
     {
       id: 1,
@@ -80,7 +102,7 @@ export class ProfileService {
       mediumlink: '',
       imgUrl: 'assets/images/github_image.jpg',
       tech: 'Tech List'
-    },
+    }
     // {
     //   id: 14,
     //   title: 'Matrimonial Website',
@@ -192,25 +214,11 @@ Completed my Secondary school with 84%.`
   extraCircularInfo: any = [
     {
       id:1,
-      title: 'Blogger',
+      title: 'Title',
       description: '',
-      img: 'assets/images/Mehul Kothari – Medium1.png',
-      url: 'https://mehulkothari05.medium.com/'
-    },
-    {
-      id:1,
-      title: 'Github',
-      description: '',
-      img: 'assets/images/Mehulkothari_github.png',
-      url: 'https://github.com/mehulk05/'
-    },
-    {
-      id:1,
-      title: 'Freelancing',
-      description: '',
-      img: 'assets/images/mehul_freelancing.png',
-      url: 'https://www.upwork.com/freelancers/~016d6f497a5629df4b'
-    },
+      img: 'img link',
+      url: 'link'
+    }
   ];
 
   getSkills(): Observable<any> {

@@ -5,41 +5,17 @@
           <div class="col-lg-6 col-md-12">
             <div class="card-body">
               <div class="h4 mt-0 title">About Me</div>
-              <div>
-                <ul>
-                  <li *ngFor="let m of about1 | split">{{m}}</li>
-                </ul>
-              </div>
-                <p>{{about2}}</p>
+                <p>{{aboutDescription}}</p>
             </div>
           </div>
           <div class="col-lg-6 col-md-12">
             <div class="card-body">
               <div class="h4 mt-0 title">Personal Information</div>
-              <div class="row">
+              <div *ngFor="let info of personalInformation" class="row mt-3">
                 <div class="col-sm-4">
-                  <strong class="text-uppercase">Residence:</strong>
+                  <strong class="text-uppercase">{{info.title}}</strong>
                 </div>
-                <div class="col-sm-8">Columbus, OH</div>
-              </div>
-              <div class="row mt-3">
-                <div class="col-sm-4">
-                  <strong class="text-uppercase">Employment:</strong>
-                </div>
-                <div class="col-sm-8">Nationwide Insurance
-                </div>
-              </div>
-              <div class="row mt-3">
-                <div class="col-sm-4">
-                  <strong class="text-uppercase">Email:</strong>
-                </div>
-                <div class="col-sm-8">mjandersondeveloper@gmail.com</div>
-              </div>
-              <div class="row mt-3">
-                <div class="col-sm-4">
-                  <strong class="text-uppercase">Phone:</strong>
-                </div>
-                <div class="col-sm-8">(330) 247-8166</div>
+                <div class="col-sm-8">{{info.description}}</div>
               </div>
             </div>
           </div>
