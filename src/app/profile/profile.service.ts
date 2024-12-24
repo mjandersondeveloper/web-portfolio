@@ -221,10 +221,6 @@ Completed my Secondary school with 84%.`
     }
   ];
 
-  getPersonalInformation(): Observable<any> {
-    return this.personalInformation;
-  }
-
   getSkills(): Observable<any> {
     return this.skillsData;
   }
