@@ -16,6 +16,6 @@ personalInformation: any;
 
   ngOnInit() {
     this.aboutDescription =  this.profileService.aboutDescription;
-    this.personalInformation = this.profileService.personalInformation;
+    this.personalInformation = this.profileService.personalInformationData;
   }
 }
