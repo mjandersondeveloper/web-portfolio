@@ -150,34 +150,25 @@ export class ProfileService {
 
   educationData: any = [
     {
-      'id': '1',
-      'from_to_year': '2015 - 2019',
-      'education': 'Bachelor\'s Degree',
-      'stream': 'Bachelor of Engineering',
-      'info': `Aditya Silver Oak Institute is GTU Affiliated and ranks 7th in Gujurat
-Completed B.E in Computer Engineering with 9.54 CGPA.
-Won the Best Student Award 3 times for excellent Academic records at College.
-Maintained above 9.1 spi in every semester of college academic .`,
-      'institution': 'ADITYA SILVER OAK INSTITUTE OF TECHNOLOGY, AHMEDABAD'
+      year: '2013 - 2017',
+      degreeType: `Bachelor's of Science`,
+      degreeDetail: 'Computer Science and Engineering Technology',
+      university: 'University of Toledo',
+      description: `Graduated Cum Laude .
+      Coursework: Comparative Programming Languages, Advanced Website Design, Computer and Network Security, Introduction to Algorithms, Object Oriented Programming and Data Structures .
+      Honors & Awards: Dean's List - Fall 2015, Fall 2016, Spring 2017, John O. Moseley Leadership School Scholarship, Gold Award Scholarship, Nordson BUILDS Scholarship Program .
+      Activities & Societies: Sigma Alpha Epsilon, University of Toledo Student Government, University of Toledo Student Grievance Council, InterFraternity Council
+      `
     },
     {
-      'id': '2',
-      'from_to_year': '2013 - 2015',
-      'education': 'Higher Secondary',
-      'stream': 'Science and Mathematics',
-      'institution': 'GYANDEEEP VIDHYALAYA,AHMEDABAD',
-      'info': `The High School was mainly focus on the bases of science, mathematics, and Chemistry
-There was also a good base on physics, mathematics and chemistry.
-Completed my high school with 78%.`
-    },
-    {
-      'id': '3',
-      'from_to_year': '2012 - 2013',
-      'education': 'Secondary  School',
-      'stream': 'Science and Mathematics',
-      'institution': 'GYANDEEEP VIDHYALAYA,AHMEDABAD',
-      'info': `The Secondary aims at Maths , English , Science, Social Science, Litrature and Languages.
-Completed my Secondary school with 84%.`
+      year: '2020 - 2024',
+      degreeType: `Master's of Science`,
+      degreeDetail: 'Computer Science',
+      university: 'Georgia Institute of Technology',
+      description: `Specialized in Computing Systems .
+      Enrolled in the Online Masters of Computer Science (OMSCS) program while employed at Nationwide Insurance .
+      Coursework: Database System Concepts & Design, Introduction to Graduate Algorithms, Machine Learning For Trading, Software Analysis & Testing, Software Architecture and Design, Software Development Process
+      `
     }
   ];
 
@@ -237,10 +228,6 @@ Completed my Secondary school with 84%.`
 
   getProjects(): Observable<any> {
     return this.projects;
-  }
-
-  getEducation(): Observable<any> {
-    return this.educationData;
   }
 
   getExtraCircular(): Observable<any> {

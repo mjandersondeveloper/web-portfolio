@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProfileService } from '../profile.service';
 
 @Component({
   selector: 'app-education',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EducationComponent implements OnInit {
 
-  constructor() { }
+  educationData: any
+  
+  constructor(    
+    private profileService: ProfileService
+  ) { }
 
   ngOnInit() {
+    this.educationData =  this.profileService.educationData;
   }
-
 }
