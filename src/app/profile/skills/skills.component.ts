@@ -8,13 +8,13 @@ import { ProfileService } from '../profile.service';
 })
 export class SkillsComponent implements OnInit {
 
-  skills: any
+  skillData: any
 
-  constructor(private profileService:ProfileService) { }
+  constructor(
+    private profileService:ProfileService
+  ) { }
 
     ngOnInit() {
-
-      this.skills =  this.profileService.getSkills()
+      this.skillData =  this.profileService.skillsData;
     }
-
 }
