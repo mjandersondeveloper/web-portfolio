@@ -115,38 +115,82 @@ export class ProfileService {
     // }
   ];
 
-  skillsData: any = [
-    {
-      'id': '1',
-      'skill': 'Skill 1',
-      'progress': '85%'
-    },
-    {
-      'id': '2',
-      'skill': 'Skill 2',
-      'progress': '80%'
-    },
-    {
-      'id': '3',
-      'skill': 'Skill 3',
-      'progress': '80%'
-    },
-    {
-      'id': '4',
-      'skill': 'Skill 4',
-      'progress': '75%'
-    },
-    {
-      'id': '5',
-      'skill': 'Skill 5',
-      'progress': '75%'
-    },
-    {
-      'id': '6',
-      'skill': 'Skill 6',
-      'progress': '70%'
-    }
-  ];
+  skillsData: any = {
+    languagesAndFrameworks: [
+      {
+        detail: 'Java',
+        icon: 'devicon-java-plain colored'
+      },
+      {
+        detail: 'JavaScript',
+        icon: 'devicon-javascript-plain colored'
+      },
+      {
+        detail: 'Typescript',
+        icon: 'devicon-typescript-plain colored'
+      },
+      {
+        detail: 'SQL',
+        icon: 'devicon-azuresqldatabase-plain colored'
+      },
+      {
+        detail: 'HTML/CSS',
+        icon: 'devicon-html5-plain colored'
+      },
+      {
+        detail: 'Angular',
+        icon: 'devicon-angularjs-plain colored'
+      },
+      {
+        detail: 'Maven',
+        icon: 'devicon-maven-plain colored'
+      },
+      {
+        detail: 'SpringBoot',
+        icon: 'devicon-spring-original colored'
+      }
+    ],
+    applications: [
+      {
+        detail: 'Visual Studio',
+        icon: 'devicon-vscode-plain colored'
+      },
+      {
+        detail: 'Postman',
+        icon: 'devicon-postman-plain colored'
+      },
+      {
+        detail: 'Git',
+        icon: 'devicon-git-plain colored'
+      },
+      {
+        detail: 'Eclipse',
+        icon: 'devicon-eclipse-plain colored'
+      },
+      {
+        detail: 'IntelliJ',
+        icon: 'devicon-intellij-plain colored'
+      },
+      {
+        detail: 'Splunk',
+        icon: 'devicon-splunk-original-wordmark colored'
+      },
+      {
+        detail: 'Docker',
+        icon: 'devicon-docker-plain colored'
+      },
+      {
+        detail: 'Apigee',
+        icon: 'assets/images/apigee.svg',
+        useImageFile: true
+      },
+      {
+        detail: 'Concourse',
+        icon: 'assets/images/concourse.svg',
+        useImageFile: true
+      }
+    ]
+  };
 
   educationData: any = [
     {
@@ -221,10 +265,6 @@ export class ProfileService {
       url: 'link'
     }
   ];
-
-  getSkills(): Observable<any> {
-    return this.skillsData;
-  }
 
   getProjects(): Observable<any> {
     return this.projects;
