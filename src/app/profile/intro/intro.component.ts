@@ -6,13 +6,17 @@ import { ProfileService } from '../profile.service';
   templateUrl: './intro.component.html',
   styleUrls: ['./intro.component.scss']
 })
+
 export class IntroComponent implements OnInit {
-  cvUrl: any
-  constructor(private profileService:ProfileService) { }
+
+  resumeUrl: any
+
+  constructor(
+    private profileService:ProfileService
+  ) { }
 
   ngOnInit() {
-
-    this.cvUrl =  this.profileService.resumeDownloadUrl
+    this.resumeUrl =  this.profileService.resumeDownloadUrl
   }
 
 }

@@ -1,56 +1,26 @@
 <div class="section" id="education">
-    <div class="container cc-education">
-      <div class="h4 text-center mb-4 title">Education</div>
+  <div class="container cc-education">
+    <div class="h4 text-center mb-4 title">Education</div>
+    <div *ngFor="let education of educationData">
       <div class="card">
         <div class="row">
           <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
             <div class="card-body cc-education-header">
-              <p>2013 - 2017</p>
-              <div class="h5">Bachelor's Degree</div>
+              <p>{{education.year}}</p>
+              <div class="h5">{{education.degreeType}}</div>
             </div>
           </div>
           <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
             <div class="card-body">
-              <div class="h5">Bachelor of Science</div>
-               <h4 class="category">University of Toledo
-               </h4>
-               <!-- <ul>
-                <li> Aditya Silver Oak Institute is GTU Affiliated and <b>ranks 7th</b> in Gujurat </li>
-                    <li>Completed B.E in Computer Engineering with <b>9.54 CGPA</b>.</li>
-                 <li>Won the <b>Best Student Award</b> 3 times for excellent Academic records at College.</li>
-                 <li>Maintained above <b>9.1 spi</b> in every semester of college academic .</li>
-              </ul> -->
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="row">
-          <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-            <div class="card-body cc-education-header">
-              <p>2020 - 2024</p>
-              <div class="h5">Masters's Degree</div>
-            </div>
-          </div>
-          <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-            <div class="card-body">
-              <div class="h5">Master of Science</div>
-               <h4 class="category">Georgia Institute of Technology
-               </h4>
-               <!-- <ul>
-                <li>
-                  The High School was mainly focus on the bases of science, mathematics, and Chemistry
-                                  </li>
-                                  <li>
-                                     There was also a good base on physics, mathematics and chemistry.
-                                  </li>
-                                  <li>
-                                      Completed my high school with<b> 78%</b>.
-                                  </li>
-                  </ul> -->
+              <div class="h5">{{education.degreeDetail}}</div>
+              <h4 class="category">{{education.university}}</h4>
+              <ul>
+                <li *ngFor="let description of education.description | split" [innerHTML]="description"></li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>

@@ -10,10 +10,11 @@ export class ExperienceComponent implements OnInit {
 
 workExperience: any
 
-  constructor(private profileService:ProfileService) { }
+  constructor(
+    private profileService: ProfileService
+  ) { }
 
-    ngOnInit() {
-
-      this.workExperience =  this.profileService.workExperienceData;
-    }
+  ngOnInit() {
+    this.workExperience =  this.profileService.workExperienceData;
+  }
 }
