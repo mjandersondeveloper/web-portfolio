@@ -155,9 +155,9 @@ export class ProfileService {
       degreeDetail: 'Computer Science and Engineering Technology',
       university: 'University of Toledo',
       description: `Graduated Cum Laude .
-      Coursework: Comparative Programming Languages, Advanced Website Design, Computer and Network Security, Introduction to Algorithms, Object Oriented Programming and Data Structures .
-      Honors & Awards: Dean's List - Fall 2015, Fall 2016, Spring 2017, John O. Moseley Leadership School Scholarship, Gold Award Scholarship, Nordson BUILDS Scholarship Program .
-      Activities & Societies: Sigma Alpha Epsilon, University of Toledo Student Government, University of Toledo Student Grievance Council, InterFraternity Council
+      <b>Coursework:</b> Comparative Programming Languages, Advanced Website Design, Computer and Network Security, Introduction to Algorithms, Object Oriented Programming and Data Structures .
+      <b>Honors & Awards:</b> Dean's List - Fall 2015, Fall 2016, Spring 2017, John O. Moseley Leadership School Scholarship, Gold Award Scholarship, Nordson BUILDS Scholarship Program .
+      <b>Activities & Societies:</b> Sigma Alpha Epsilon, University of Toledo Student Government, University of Toledo Student Grievance Council, InterFraternity Council
       `
     },
     {
@@ -167,7 +167,7 @@ export class ProfileService {
       university: 'Georgia Institute of Technology',
       description: `Specialized in Computing Systems .
       Enrolled in the Online Masters of Computer Science (OMSCS) program while employed at Nationwide Insurance .
-      Coursework: Database System Concepts & Design, Introduction to Graduate Algorithms, Machine Learning For Trading, Software Analysis & Testing, Software Architecture and Design, Software Development Process
+      <b>Coursework:</b> Database System Concepts & Design, Introduction to Graduate Algorithms, Machine Learning For Trading, Software Analysis & Testing, Software Architecture and Design, Software Development Process
       `
     }
   ];

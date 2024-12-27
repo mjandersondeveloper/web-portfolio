@@ -15,7 +15,7 @@
               <div class="h5">{{education.degreeDetail}}</div>
               <h4 class="category">{{education.university}}</h4>
               <ul>
-                <li *ngFor="let description of education.description | split">{{description}}</li>
+                <li *ngFor="let description of education.description | split" [innerHTML]="description"></li>
               </ul>
             </div>
           </div>
