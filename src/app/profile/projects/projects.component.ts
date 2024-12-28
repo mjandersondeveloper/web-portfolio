@@ -8,16 +8,16 @@ import { ProfileService } from '../profile.service';
 })
 export class ProjectsComponent implements OnInit {
   config: any;
-  projects: any =[];
+  projectData: any =[];
 
   constructor(private profileService:ProfileService) { }
 
   ngOnInit() {
-    this.projects = this.profileService.getProjects()
+    this.projectData = this.profileService.projectData;
     this.config = {
       itemsPerPage: 6,
       currentPage: 1,
-      totalItems: this.projects.length
+      totalItems: this.projectData.length
     };
   }
 

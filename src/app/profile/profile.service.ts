@@ -42,77 +42,42 @@ export class ProfileService {
     }
   ]
   
-  projects:any = [
+  projectData: any = [
     {
-      id: 1,
-      title: 'Title',
-      desc: 'Description',
-      livedemo: '',
-      githurl: '',
-      mediumlink: '',
-      imgUrl: 'assets/images/github_image.jpg',
-      tech: 'Tech List'
+      title: 'Project Euler Exercises',
+      description: 'Collection of exercises from Project Euler',
+      githubUrl: 'https://github.com/mjandersondeveloper/portfolio-projects/tree/project-euler-exercises',
+      imageUrl: 'assets/images/github_image.jpg',
+      technology: 'Java'
     },
     {
-      id: 2,
-      title: 'Title',
-      desc: 'Description',
-      livedemo: '',
-      githurl: '',
-      mediumlink: '',
-      imgUrl: 'assets/images/github_image.jpg',
-      tech: 'Tech List'
+      title: 'Algorithm Projects',
+      description: 'Collection of projects that implement algorithms',
+      githubUrl: 'https://github.com/mjandersondeveloper/portfolio-projects/tree/agorithm-projects',
+      imageUrl: 'assets/images/github_image.jpg',
+      technology: 'C++'
     },
     {
-      id: 3,
-      title: 'Title',
-      desc: 'Description',
-      livedemo: '',
-      githurl: '',
-      mediumlink: '',
-      imgUrl: 'assets/images/github_image.jpg',
-      tech: 'Tech List'
+      title: 'HTML/CSS Projects',
+      description: 'Collection of projects made using HTML/CSS',
+      githubUrl: 'https://github.com/mjandersondeveloper/portfolio-projects/tree/web-projects',
+      imageUrl: 'assets/images/github_image.jpg',
+      technology: 'HTML/CSS'
     },
     {
-      id: 4,
-      title: 'Title',
-      desc: 'Description',
-      livedemo: '',
-      githurl: '',
-      mediumlink: '',
-      imgUrl: 'assets/images/github_image.jpg',
-      tech: 'Tech List'
+      title: 'Web Portfolio (HTML/CSS)',
+      description: 'Personal portfolio made using HTML/CSS',
+      githubUrl: 'https://github.com/mjandersondeveloper/portfolio-projects/tree/web-portfolio',
+      imageUrl: 'assets/images/github_image.jpg',
+      technology: 'HTML/CSS'
     },
     {
-      id: 5,
-      title: 'Title',
-      desc: 'Description',
-      livedemo: '',
-      githurl: '',
-      mediumlink: '',
-      imgUrl: 'assets/images/github_image.jpg',
-      tech: 'Tech List'
-    },
-    {
-      id: 6,
-      title: 'Title',
-      desc: 'Description',
-      livedemo: '',
-      githurl: '',
-      mediumlink: '',
-      imgUrl: 'assets/images/github_image.jpg',
-      tech: 'Tech List'
+      title: 'PHP Projects',
+      description: 'Collection of projects made using PHP',
+      githubUrl: 'https://github.com/mjandersondeveloper/portfolio-projects/tree/php-projects',
+      imageUrl: 'assets/images/github_image.jpg',
+      technology: 'PHP'
     }
-    // {
-    //   id: 14,
-    //   title: 'Matrimonial Website',
-    //   desc: '',
-    //   livedemo: 'https://mehulkothari05.medium.com/',
-    //   githurl: 'https://github.com/mehulk05/Matrimonial-Website.git',
-    //   mediumlink: 'https://mehulkothari05.medium.com/matrimonial-website-9cd5247f477d',
-    //   imgUrl: 'assets/images/z14.png',
-    //   tech: 'HTML, CSS, Bootstrap, Jquery'
-    // }
   ];
 
   skillsData: any = {
@@ -265,10 +230,6 @@ export class ProfileService {
       url: 'link'
     }
   ];
-
-  getProjects(): Observable<any> {
-    return this.projects;
-  }
 
   getExtraCircular(): Observable<any> {
     return this.extraCircularInfo;
