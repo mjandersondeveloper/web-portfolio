@@ -7,7 +7,7 @@ import { DOCUMENT } from "@angular/common";
     styleUrls: ['./scroll.component.scss']
 })
 export class ScrollComponent implements OnInit {
-    windowScrolled: boolean;
+    windowScrolled = false;
     constructor(@Inject(DOCUMENT) private document: Document) {}
     @HostListener("window:scroll", [])
     onWindowScroll() {

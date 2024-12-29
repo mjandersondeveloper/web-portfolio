@@ -8,9 +8,7 @@ import { environment } from '../../environments/environment';
 })
 export class ProfileService {
 
-  constructor(
-    private http: HttpClient
-  ) { }
+  constructor() { }
 
   aboutDescription = `Senior software engineer with 6+ years of experience in leveraging various tools and technologies to 
   enhance business productivity. Proficient in software development, design, and testing, with a strong foundation 
@@ -186,7 +184,7 @@ export class ProfileService {
       company: 'Nationwide Insurance',
       location: 'Columbus, OH',
       timeline: 'January 2018 - Present',
-      role: 'Software Engineer',
+      role: 'Specialist, Software Engineer',
       icon: 'assets/images/nationwide_logo.png',
       description: `Develop multiple webpages for Nationwide's self-servicing website using HTML, CSS, JavaScript, and the Angular framework. . 
       Created a SpringBoot microservice enabling customers to add ID cards to their Apple/Google Wallet via Nationwide's self-service website. .

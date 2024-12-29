@@ -3,6 +3,7 @@
     float: left;
     background: #fff;
     margin-bottom: 3em;
+    transition: transform 0.3s ease;
 }
 
 @media screen and (max-width: 768px) {
@@ -69,12 +70,12 @@
     color: #000;
 }
 
-.project-entry:hover .project-img img {
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    transform: scale(1.1);
+.project-entry:hover {
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .project-entry h4 {
@@ -95,6 +96,9 @@
 }
 
 @media screen and (min-width: 992px) {
+    .card-title {
+        margin-bottom: -20px;
+    }
     .card-img-top {
         height: 196px;
     }
