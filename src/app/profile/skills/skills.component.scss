@@ -6,6 +6,19 @@
     margin-right: 10px;
 }
 
+.progress-primary {
+    transition: transform 0.3s ease;
+}
+
+.progress-primary:hover {
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    transform: scale(1.05);
+    cursor: default;
+}
+
 .devicon-splunk-original-wordmark.colored {
     font-size: 25px;
 }

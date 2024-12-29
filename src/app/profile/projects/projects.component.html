@@ -3,19 +3,16 @@
         <div class="h4 text-center mb-4 title">Projects</div>
         <!-- <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls> -->
         <div class="row">
-            <ng-container *ngFor="let project of projects| paginate: config">
-                <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-                    <div class="blog-entry">
+            <ng-container *ngFor="let project of projectData | paginate: config">
+                <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-offset="50" data-aos-duration="500">
+                    <div class="project-entry">
                         <div class="card">
-                            <img class="card-img-top" src={{project.imgUrl}} onerror="this.src = 'assets/images/gif.gif'" alt="Card image" style="width:100%">
+                            <img class="card-img-top" src={{project.imageUrl}} alt="Project Card image" style="width:100%">
                             <div class="card-body">
                                 <h4 class="card-title">{{project.title}}</h4>
-                                <h5 class="card-text"><b>Technology :</b> {{project.tech}} </h5>
-                                <h5 class="card-text"><a href={{project.mediumlink}}>Read Blog on this  Project</a></h5>
-
-                                <a href={{project.livedemo}} class="btn btn-primary stretched-link ml-2 mr-5">Live Demo</a>
-                                <a href={{project.githurl}} class="btn btn-primary stretched-link">GithubLink</a>
-
+                                <div class="desc"><span>{{project.description}}</span></div>
+                                <h5 class="card-text"><b>Technology :</b> {{project.technology}} </h5>
+                                <a href={{project.githubUrl}} class="btn btn-primary stretched-link" target="_blank">Github Link</a>
                             </div>
                         </div>
                     </div>
