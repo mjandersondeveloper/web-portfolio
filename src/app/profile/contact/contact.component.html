@@ -9,7 +9,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="card-body">
-                                        <form name="form" (ngSubmit)="f.form.valid ; f.resetForm()" #f="ngForm" novalidate>
+                                        <form name="form" (ngSubmit)="onSubmit() ; f.resetForm()" #f="ngForm">
                                             <div class="p pb-3">
                                                 <strong>Feel free to contact me </strong>
                                             </div>
@@ -17,9 +17,12 @@
                                                 <div class="col">
                                                     <div class="input-group">
                                                         <span class="input-group-addon">
-                                    <i class="fa fa-user-circle"></i>
-                                  </span>
-                                                        <input class="form-control" type="text" name="name" placeholder="Name" [(ngModel)]="model.name" #name="ngModel" [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" required />
+                                                            <i class="fa fa-user-circle"></i>
+                                                        </span>
+                                                        <input class="form-control" type="text" name="name"
+                                                            placeholder="Name" [(ngModel)]="contactFormData.name" #name="ngModel"
+                                                            [ngClass]="{ 'is-invalid': invalid }"
+                                                            required />
                                                     </div>
                                                 </div>
                                             </div>
@@ -27,9 +30,13 @@
                                                 <div class="col">
                                                     <div class="input-group">
                                                         <span class="input-group-addon">
-                                    <i class="fa fa-file-text"></i>
-                                  </span>
-                                                        <input class="form-control" type="text" name="subject" placeholder="Subject" [(ngModel)]="model.subject" #subject="ngModel" [ngClass]="{ 'is-invalid': f.submitted && subject.invalid }" required />
+                                                            <i class="fa fa-file-text"></i>
+                                                        </span>
+                                                        <input class="form-control" type="text" name="subject"
+                                                            placeholder="Subject" [(ngModel)]="contactFormData.subject"
+                                                            #subject="ngModel"
+                                                            [ngClass]="{ 'is-invalid': f.submitted && subject.invalid }"
+                                                            required />
                                                     </div>
                                                 </div>
                                             </div>
@@ -37,17 +44,25 @@
                                                 <div class="col">
                                                     <div class="input-group">
                                                         <span class="input-group-addon">
-                                    <i class="fa fa-envelope"></i>
-                                  </span>
-                                                        <input class="form-control" type="text" name="email" placeholder="E-mail" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required
-                                                        />
+                                                            <i class="fa fa-envelope"></i>
+                                                        </span>
+                                                        <input class="form-control" type="text" name="email"
+                                                            placeholder="E-mail" [(ngModel)]="contactFormData.email"
+                                                            #email="ngModel"
+                                                            [ngClass]="{ 'is-invalid': f.submitted && email.invalid }"
+                                                            pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                                                            required />
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <textarea class="form-control" name="message" placeholder="Your Message" [(ngModel)]="model.message" #message="ngModel" [ngClass]="{ 'is-invalid': f.submitted && message.invalid }" required></textarea>
+                                                        <textarea class="form-control" name="message"
+                                                            placeholder="Your Message" [(ngModel)]="contactFormData.message"
+                                                            #message="ngModel"
+                                                            [ngClass]="{ 'is-invalid': f.submitted && message.invalid }"
+                                                            required></textarea>
                                                     </div>
                                                 </div>
                                             </div>

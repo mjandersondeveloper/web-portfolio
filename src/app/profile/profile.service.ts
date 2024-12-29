@@ -29,14 +29,6 @@ export class ProfileService {
     {
       title: 'Hobbies:',
       description: 'Bowling, Gaming, Coding, Kickball'
-    },
-    {
-      title: 'Email:',
-      description: 'mjandersondeveloper@gmail.com'
-    },
-    {
-      title: 'Phone:',
-      description: '(330) 247-8166'
     }
   ]
   

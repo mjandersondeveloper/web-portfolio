@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-import { environment } from '../../../environments/environment';
+import { ContactFormData } from '../profile.interface';
 
 @Component({
   selector: 'app-contact',
@@ -9,12 +8,22 @@ import { environment } from '../../../environments/environment';
 })
 export class ContactComponent implements OnInit {
  
-  model: any = {};
+  contactFormData: ContactFormData = {
+    name: '',
+    subject: '',
+    email: '',
+    message: ''
+  };
+  invalid = false;
 
   constructor(){}
 
-  ngOnInit() {
-     }
+  ngOnInit() {}
+
+  onSubmit() {
+    console.log('Form submitted:', this.contactFormData);
+    this.invalid = true;
+}
 
 
 }
