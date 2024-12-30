@@ -9,9 +9,9 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="card-body">
-                                        <form name="form" (ngSubmit)="onSubmit() ; f.resetForm()" #f="ngForm">
+                                        <form name="form" #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
                                             <div class="p pb-3">
-                                                <strong>Feel free to contact me </strong>
+                                                <strong>Feel free to contact me</strong>
                                             </div>
                                             <div class="row mb-3">
                                                 <div class="col">
@@ -20,8 +20,8 @@
                                                             <i class="fa fa-user-circle"></i>
                                                         </span>
                                                         <input class="form-control" type="text" name="name"
-                                                            placeholder="Name" [(ngModel)]="contactFormData.name" #name="ngModel"
-                                                            [ngClass]="{ 'is-invalid': invalid }"
+                                                            placeholder="Name" [(ngModel)]="contactFormData.name.input"
+                                                            #name="ngModel" [ngClass]="{ 'is-invalid': contactFormData.name.invalid }"
                                                             required />
                                                     </div>
                                                 </div>
@@ -33,9 +33,9 @@
                                                             <i class="fa fa-file-text"></i>
                                                         </span>
                                                         <input class="form-control" type="text" name="subject"
-                                                            placeholder="Subject" [(ngModel)]="contactFormData.subject"
+                                                            placeholder="Subject" [(ngModel)]="contactFormData.subject.input"
                                                             #subject="ngModel"
-                                                            [ngClass]="{ 'is-invalid': f.submitted && subject.invalid }"
+                                                            [ngClass]="{ 'is-invalid': contactFormData.subject.invalid }"
                                                             required />
                                                     </div>
                                                 </div>
@@ -47,10 +47,10 @@
                                                             <i class="fa fa-envelope"></i>
                                                         </span>
                                                         <input class="form-control" type="text" name="email"
-                                                            placeholder="E-mail" [(ngModel)]="contactFormData.email"
+                                                            placeholder="E-mail" [(ngModel)]="contactFormData.email.input"
                                                             #email="ngModel"
-                                                            [ngClass]="{ 'is-invalid': f.submitted && email.invalid }"
-                                                            pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                                                            [ngClass]="{ 'is-invalid': contactFormData.email.invalid }"
+                                                            pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
                                                             required />
                                                     </div>
                                                 </div>
@@ -59,9 +59,9 @@
                                                 <div class="col">
                                                     <div class="form-group">
                                                         <textarea class="form-control" name="message"
-                                                            placeholder="Your Message" [(ngModel)]="contactFormData.message"
-                                                            #message="ngModel"
-                                                            [ngClass]="{ 'is-invalid': f.submitted && message.invalid }"
+                                                            placeholder="Your Message"
+                                                            [(ngModel)]="contactFormData.message.input" #message="ngModel"
+                                                            [ngClass]="{ 'is-invalid': contactFormData.message.invalid }"
                                                             required></textarea>
                                                     </div>
                                                 </div>
