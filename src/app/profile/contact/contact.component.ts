@@ -22,7 +22,7 @@ export class ContactComponent {
 
   onSubmit(contactForm: any): void {
     const googleSheetsScriptURL = 'https://script.google.com/macros/s/AKfycbz-XJd51Q3oN-jKiGINIYYVQbuqH2bAhTrUtSBJ_HRKDUanZ-MrMo_n7T-g-syjKpo/exec';
-    const isValid = this.checkFormData(this.contactFormData, contactForm);
+    const isValid = this.checkFormData(this.contactFormData, contactForm);  
     if (isValid) {
       const reformattedFormData = this.reformatFormData(this.contactFormData);
       this.http.post(googleSheetsScriptURL, reformattedFormData, { headers: { 'Content-Type': 'text/plain' } }
