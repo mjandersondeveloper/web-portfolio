@@ -11,17 +11,18 @@
                                     <div class="card-body">
                                         <form name="form" #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
                                             <div class="p pb-3">
-                                                <strong>Feel free to contact me</strong>
+                                                <strong>Send me a message!</strong>
                                             </div>
                                             <div class="row mb-3">
                                                 <div class="col">
                                                     <div class="input-group">
-                                                        <span class="input-group-addon">
+                                                        <span [ngClass]="{ 'is-invalid': contactFormData.name.invalid, 'disabled': disableForm, 'input-group-addon': true }">
                                                             <i class="fa fa-user-circle"></i>
                                                         </span>
                                                         <input class="form-control" type="text" name="name"
                                                             placeholder="Name" [(ngModel)]="contactFormData.name.input"
-                                                            #name="ngModel" [ngClass]="{ 'is-invalid': contactFormData.name.invalid }"
+                                                            #name="ngModel"
+                                                            [ngClass]="{ 'is-invalid': contactFormData.name.invalid, 'disabled': disableForm }"
                                                             required />
                                                     </div>
                                                 </div>
@@ -29,13 +30,14 @@
                                             <div class="row mb-3">
                                                 <div class="col">
                                                     <div class="input-group">
-                                                        <span class="input-group-addon">
+                                                        <span [ngClass]="{ 'is-invalid': contactFormData.subject.invalid, 'disabled': disableForm, 'input-group-addon': true }">
                                                             <i class="fa fa-file-text"></i>
                                                         </span>
                                                         <input class="form-control" type="text" name="subject"
-                                                            placeholder="Subject" [(ngModel)]="contactFormData.subject.input"
+                                                            placeholder="Subject"
+                                                            [(ngModel)]="contactFormData.subject.input"
                                                             #subject="ngModel"
-                                                            [ngClass]="{ 'is-invalid': contactFormData.subject.invalid }"
+                                                            [ngClass]="{ 'is-invalid': contactFormData.subject.invalid, 'disabled': disableForm }"
                                                             required />
                                                     </div>
                                                 </div>
@@ -43,13 +45,13 @@
                                             <div class="row mb-3">
                                                 <div class="col">
                                                     <div class="input-group">
-                                                        <span class="input-group-addon">
+                                                        <span [ngClass]="{ 'is-invalid': contactFormData.email.invalid, 'disabled': disableForm, 'input-group-addon': true }">
                                                             <i class="fa fa-envelope"></i>
                                                         </span>
                                                         <input class="form-control" type="text" name="email"
-                                                            placeholder="E-mail" [(ngModel)]="contactFormData.email.input"
-                                                            #email="ngModel"
-                                                            [ngClass]="{ 'is-invalid': contactFormData.email.invalid }"
+                                                            placeholder="E-mail"
+                                                            [(ngModel)]="contactFormData.email.input" #email="ngModel"
+                                                            [ngClass]="{ 'is-invalid': contactFormData.email.invalid, 'disabled': disableForm }"
                                                             pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
                                                             required />
                                                     </div>
@@ -60,15 +62,23 @@
                                                     <div class="form-group">
                                                         <textarea class="form-control" name="message"
                                                             placeholder="Your Message"
-                                                            [(ngModel)]="contactFormData.message.input" #message="ngModel"
-                                                            [ngClass]="{ 'is-invalid': contactFormData.message.invalid }"
+                                                            [(ngModel)]="contactFormData.message.input"
+                                                            #message="ngModel"
+                                                            [ngClass]="{ 'is-invalid': contactFormData.message.invalid, 'disabled': disableForm }"
                                                             required></textarea>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="row" *ngIf="displayErrorMessage || displaySuccessMessage">
+                                                <div class="col">
+                                                  <p [ngClass]="{ 'error-class': displayErrorMessage, 'success-class': displaySuccessMessage }">
+                                                    {{ displayErrorMessage ? errorMessage : successMessage }}
+                                                  </p>
+                                                </div>
+                                              </div>
                                             <div class="row">
                                                 <div class="col">
-                                                    <button class="btn btn-primary" type="submit">Send</button>
+                                                    <button [ngClass]="{ 'disabled': disableForm, 'btn btn-primary stretched-btn': true }" type="submit">Send</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -76,14 +86,12 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="card-body">
-                                        <p class="mb-0">
-                                            <strong>Phone:</strong>
-                                        </p>
-                                        <p class="pb-2">(330) 247-8166</p>
-                                        <p class="mb-0">
-                                            <strong>Email:</strong>
-                                        </p>
-                                        <p>mjandersondeveloper@gmail.com</p>
+                                        <div *ngFor="let data of contactData">
+                                            <p class="mb-0">
+                                                <strong>{{data.title}}</strong>
+                                            </p>
+                                            <p class="pb-2">{{data.description}}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -93,4 +101,3 @@
             </div>
         </div>
     </div>
-</div>

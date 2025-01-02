@@ -1,0 +1,13 @@
+.stretched-btn {
+    width: 100%;
+}
+
+.disabled {
+    background-color: #ccc;
+    pointer-events: none;
+}
+
+.is-invalid.input-group-addon {
+    border-color: #DC3545;
+}
+

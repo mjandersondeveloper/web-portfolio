@@ -211,6 +211,17 @@ export class ProfileService {
     },
   ];
 
+  contactData: any = [
+    {
+      title: 'Phone:',
+      description: '(330) 247-8166'
+    },
+    {
+      title: 'Email:',
+      description: 'mjandersondeveloper@gmail.com'
+    }
+  ]
+
   extraCircularInfo: any = [
     {
       id:1,
