@@ -29,14 +29,6 @@ export class ProfileService {
     {
       title: 'Hobbies:',
       description: 'Bowling, Gaming, Coding, Kickball'
-    },
-    {
-      title: 'Email:',
-      description: 'mjandersondeveloper@gmail.com'
-    },
-    {
-      title: 'Phone:',
-      description: '(330) 247-8166'
     }
   ]
   
@@ -218,6 +210,17 @@ export class ProfileService {
       Created, updated, and implemented data in school district databases using SQL.`
     },
   ];
+
+  contactData: any = [
+    {
+      title: 'Phone:',
+      description: '(330) 247-8166'
+    },
+    {
+      title: 'Email:',
+      description: 'mjandersondeveloper@gmail.com'
+    }
+  ]
 
   extraCircularInfo: any = [
     {
