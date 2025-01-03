@@ -13,7 +13,7 @@ export class ContactComponent implements OnInit {
   contactData: any;
   contactFormData: ContactFormData = {
     name: { input: '', invalid: false },
-    subject: { input: '', invalid: false },
+    phone: { input: '', invalid: false },
     email: { input: '', invalid: false },
     message: { input: '', invalid: false }
   };
@@ -33,7 +33,7 @@ export class ContactComponent implements OnInit {
   }
   
   onSubmit(contactForm: any): void {
-    const googleSheetsScriptURL = 'https://script.google.com/macros/s/AKfycbz-XJd51Q3oN-jKiGINIYYVQbuqH2bAhTrUtSBJ_HRKDUanZ-MrMo_n7T-g-syjKpo/exec';
+    const googleSheetsScriptURL = 'https://script.google.com/macros/s/AKfycbx45IpqLkb1p9VERNqoquKGIzrDIyu7gKkcLW9ejfBQ8KZv40dGU-GYEFtzkO9ddowJ/exec';
     const isValid = this.checkFormData(this.contactFormData, contactForm);  
     if (isValid) {
       const reformattedFormData = this.reformatFormData(this.contactFormData);
@@ -44,17 +44,19 @@ export class ContactComponent implements OnInit {
       this.http.post(googleSheetsScriptURL, reformattedFormData, { headers: { 'Content-Type': 'text/plain' } }
       ).subscribe({
         next: () => {
-          console.log('Form data logged successfully');
+          console.log('Contact form data sent successfully');
           this.successMessage = 'Message sent successfully! Have a great day!';
         },
         error: (err) => {
-          console.error('Error logging data:', err);
-          this.successMessage = 'Uh-oh! There was an issue sending your message. Please try again later.';
+          console.error('Error sending contact form data:', err);
+          this.displayErrorMessage = true;
+          this.displaySuccessMessage = false;
+          this.errorMessage = 'Uh-oh! There was an issue sending your message. Please try again later.';
         }
       });
       this.clearForm(contactForm);
       setTimeout(() => {
-        this.displaySuccessMessage = this.disableForm = false;
+        this.displaySuccessMessage = this.displayErrorMessage = this.disableForm = false;
       }, 5000);
     } else {
       this.setErrorMessage(contactForm?.form?.controls);
@@ -67,7 +69,7 @@ export class ContactComponent implements OnInit {
     const formDataControls = formData?.controls;
 
     submittedForm.name.invalid = formDataControls?.name?.errors != null;
-    submittedForm.subject.invalid = formDataControls?.subject?.errors != null;
+    submittedForm.phone.invalid = formDataControls?.phone?.errors != null;
     submittedForm.email.invalid = formDataControls?.email?.errors != null;
     submittedForm.message.invalid = formDataControls?.message?.errors != null;
     return formData?.status === 'VALID';
@@ -76,7 +78,7 @@ export class ContactComponent implements OnInit {
   private clearForm(form: any): void {
     this.contactFormData = {
       name: { input: '', invalid: false },
-      subject: { input: '', invalid: false },
+      phone: { input: '', invalid: false },
       email: { input: '', invalid: false },
       message: { input: '', invalid: false }
     }
@@ -86,7 +88,7 @@ export class ContactComponent implements OnInit {
   private reformatFormData(formData: ContactFormData): any {
     return {
       name: formData.name.input,
-      subject: formData.subject.input,
+      phone: formData.phone.input,
       email: formData.email.input,
       message: formData.message.input
     };
@@ -95,11 +97,15 @@ export class ContactComponent implements OnInit {
   private setErrorMessage(formControls: any): void {
     if (this.contactFormData.name.invalid) {
       this.errorMessage = 'Missing name';
-    } else if (this.contactFormData.subject.invalid) {
-      this.errorMessage = 'Missing subject';
+    } else if (this.contactFormData.phone.invalid) {
+      if (formControls?.phone?.errors?.pattern) {
+        this.errorMessage = 'Invalid phone number. Valid format: XXX-XXX-XXXX';
+      } else {
+        this.errorMessage = 'Missing phone number';
+      }
     } else if (this.contactFormData.email.invalid) {
       if (formControls?.email?.errors?.pattern) {
-        this.errorMessage = 'Invalid email address. Valid format example: test@gmail.com';
+        this.errorMessage = 'Invalid email address. Valid format: XXXXX@XXXXX.XXX';
       } else {
         this.errorMessage = 'Missing email address';
       }

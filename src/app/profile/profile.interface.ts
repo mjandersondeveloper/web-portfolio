@@ -1,7 +1,7 @@
 
 export interface ContactFormData {
     name: FormInput;
-    subject: FormInput;
+    phone: FormInput;
     email: FormInput;
     message: FormInput;
 }
