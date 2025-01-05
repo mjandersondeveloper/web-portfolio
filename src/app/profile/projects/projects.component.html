@@ -1,0 +1,24 @@
+<div class="section" id="projects">
+    <div class="container cc-education">
+        <div class="h4 text-center mb-4 title">Projects</div>
+        <!-- <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls> -->
+        <div class="row">
+            <ng-container *ngFor="let project of projectData | paginate: config">
+                <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-offset="50" data-aos-duration="500">
+                    <div class="project-entry">
+                        <div class="card">
+                            <img class="card-img-top" src={{project.imageUrl}} alt="Project Card image" style="width:100%">
+                            <div class="card-body">
+                                <h4 class="card-title">{{project.title}}</h4>
+                                <div class="desc"><span>{{project.description}}</span></div>
+                                <h5 class="card-text"><b>Technology :</b> {{project.technology}} </h5>
+                                <a href={{project.githubUrl}} class="btn btn-primary stretched-link" target="_blank">Github Link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+        <!-- <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls> -->
+    </div>
+</div>

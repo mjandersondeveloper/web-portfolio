@@ -1,0 +1,40 @@
+<div class="section" id="skill">
+    <div class="container">
+        <div class="h4 text-center mb-4 title">Skills</div>
+        <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <div class="card-body">
+                        <div class="h4 mt-0 title">Languages & Frameworks</div>
+                        <div class="row">
+                            <div class="col-md-6" *ngFor="let entry of skillData.languagesAndFrameworks">
+                                <div class="progress-container progress-primary" data-aos="fade-up" data-aos-offset="50" data-aos-duration="500">
+                                    <div class="skill-icon">
+                                        <i class="{{entry.icon}}"></i>
+                                    </div>
+                                    <span class="progress-badge">{{entry.detail}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="card-body">
+                        <div class="h4 mt-0 title">Applications</div>
+                        <div class="row">
+                            <div class="col-md-6" *ngFor="let entry of skillData.applications">
+                                <div class="progress-container progress-primary" data-aos="fade-up" data-aos-offset="50" data-aos-duration="500">
+                                    <div class="skill-icon">
+                                        <img *ngIf="entry.useImageFile" src="{{entry.icon}}" alt="skill-icon" />
+                                        <i *ngIf="!entry.useImageFile" class="{{entry.icon}}"></i>
+                                    </div>
+                                    <span class="progress-badge">{{entry.detail}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

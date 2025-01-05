@@ -1,0 +1,27 @@
+<div class="section" id="experience">
+    <div class="container cc-education">
+        <div class="h4 text-center mb-4 title">Work Experience</div>
+        <div class="colorlib-narrow-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="timeline-centered">
+                        <div *ngFor="let experience of workExperience" class="timeline-entry" data-aos="fade-up" data-aos-offset="50" data-aos-duration="500">
+                            <div class="timeline-entry-inner">
+                                <div class="timeline-icon color-1">
+                                    <img src={{experience.icon}} alt="timeline-icon" />
+                                </div>
+                                <div class="timeline-label">
+                                    <h2>{{experience.company}}<span>- &nbsp;{{experience.timeline}} &nbsp;|&nbsp; {{experience.location}}</span></h2>
+                                    <h4> {{experience.role}}</h4>
+                                    <ul>
+                                      <li *ngFor="let description of experience.description | split">{{description}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
