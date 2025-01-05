@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfileService } from '../profile.service';
+import { PROFILE_CONSTANTS } from '../profile-constants';
 
 @Component({
   selector: 'app-intro',
@@ -11,12 +11,10 @@ export class IntroComponent implements OnInit {
 
   resumeUrl: any
 
-  constructor(
-    private profileService:ProfileService
-  ) { }
+  constructor() { }
 
   ngOnInit() {
-    this.resumeUrl =  this.profileService.resumeDownloadUrl
+    this.resumeUrl =  PROFILE_CONSTANTS.resumeDownloadUrl
   }
 
 }

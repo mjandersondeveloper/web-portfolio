@@ -7,15 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(
-    // private spinner: NgxSpinnerService
-  ) { }
+  constructor() { }
 
-  ngOnInit() {
-    // this.spinner.show();
-    // setTimeout(() => {
-    //     this.spinner.hide();
-    // }, 2000);
-  }
-
+  ngOnInit() {}
 }

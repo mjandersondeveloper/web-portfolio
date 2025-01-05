@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfileService } from '../profile.service';
+import { PROFILE_CONSTANTS } from '../profile-constants';
 
 @Component({
   selector: 'app-projects',
@@ -10,10 +10,10 @@ export class ProjectsComponent implements OnInit {
   config: any;
   projectData: any =[];
 
-  constructor(private profileService:ProfileService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.projectData = this.profileService.projectData;
+    this.projectData = PROFILE_CONSTANTS.projectData;
     this.config = {
       itemsPerPage: 6,
       currentPage: 1,

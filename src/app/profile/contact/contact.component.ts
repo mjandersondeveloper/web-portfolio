@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactFormData } from '../profile.interface';
 import { HttpClient } from '@angular/common/http';
-import { ProfileService } from '../profile.service';
+import { PROFILE_CONSTANTS } from '../profile-constants';
 
 @Component({
   selector: 'app-contact',
@@ -25,11 +25,10 @@ export class ContactComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private profileService: ProfileService
   ) { }
 
   ngOnInit(): void {
-    this.contactData = this.profileService.contactData;
+    this.contactData = PROFILE_CONSTANTS.contactData;
   }
   
   onSubmit(contactForm: any): void {
