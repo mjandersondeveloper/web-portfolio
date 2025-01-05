@@ -1840,7 +1840,7 @@ body {
 }
 
 .navbar.navbar-transparent {
-  background-color: transparent !important;
+  background-color: #000000ae !important;
   -webkit-box-shadow: none;
           box-shadow: none;
   color: #FFFFFF;

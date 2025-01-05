@@ -8,7 +8,7 @@ import { PROFILE_CONSTANTS } from '../profile-constants';
 })
 export class ProjectsComponent implements OnInit {
   config: any;
-  projectData: any =[];
+  projectData: any;
 
   constructor() { }
 

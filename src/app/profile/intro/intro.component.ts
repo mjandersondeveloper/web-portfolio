@@ -9,12 +9,12 @@ import { PROFILE_CONSTANTS } from '../profile-constants';
 
 export class IntroComponent implements OnInit {
 
-  resumeUrl: any
+  resumeUrl: string
 
   constructor() { }
 
   ngOnInit() {
-    this.resumeUrl =  PROFILE_CONSTANTS.resumeDownloadUrl
+    this.resumeUrl = PROFILE_CONSTANTS.resumeDownloadUrl
   }
 
 }

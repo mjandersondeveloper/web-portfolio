@@ -17,6 +17,10 @@ export const PROFILE_CONSTANTS: any = {
     {
       title: 'Hobbies:',
       description: 'Bowling, Gaming, Coding, Kickball'
+    },
+    {
+      title: 'Fun Fact:',
+      description: 'I share the same birthday as Oprah Winfrey!'
     }
   ],
   projectData: [

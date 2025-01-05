@@ -7,7 +7,7 @@ import { PROFILE_CONSTANTS } from '../profile-constants';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
-aboutDescription = '';
+aboutDescription: string;
 personalInformation: any;
 
   constructor() { }
