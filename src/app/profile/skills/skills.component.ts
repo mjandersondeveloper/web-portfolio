@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from '../profile.service';
+import { PROFILE_CONSTANTS } from '../profile-constants';
 
 @Component({
   selector: 'app-skills',
@@ -10,11 +11,9 @@ export class SkillsComponent implements OnInit {
 
   skillData: any
 
-  constructor(
-    private profileService:ProfileService
-  ) { }
+  constructor() { }
 
     ngOnInit() {
-      this.skillData =  this.profileService.skillsData;
+      this.skillData =  PROFILE_CONSTANTS.skillsData;
     }
 }

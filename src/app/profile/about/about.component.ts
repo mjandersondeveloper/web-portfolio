@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfileService } from '../profile.service';
+import { PROFILE_CONSTANTS } from '../profile-constants';
 
 @Component({
   selector: 'app-about',
@@ -7,15 +7,13 @@ import { ProfileService } from '../profile.service';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
-aboutDescription = '';
+aboutDescription: string;
 personalInformation: any;
 
-  constructor(
-    private profileService: ProfileService
-  ) { }
+  constructor() { }
 
   ngOnInit() {
-    this.aboutDescription =  this.profileService.aboutDescription;
-    this.personalInformation = this.profileService.personalInformationData;
+    this.aboutDescription =  PROFILE_CONSTANTS.aboutDescription;
+    this.personalInformation = PROFILE_CONSTANTS.personalInformationData;
   }
 }
