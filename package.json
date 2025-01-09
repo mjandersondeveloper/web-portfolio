@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "refresh": "rm -rf package-lock.json && rm -rf node_modules/ && npm i -f",
+    "deploy": "ng deploy --base-href=/web-portfolio/"
   },
   "private": true,
   "dependencies": {
@@ -20,7 +22,7 @@
     "@angular/router": "~12.2.0",
     "ngx-pagination": "^5.0.0",
     "node": "^12.14.0",
-    "rxjs": "~6.6.0",
+    "rxjs": "^6.5.3",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
@@ -30,6 +32,7 @@
     "@angular/compiler-cli": "~12.2.0",
     "@types/jasmine": "~3.8.0",
     "@types/node": "^12.11.1",
+    "angular-cli-ghpages": "~1.0.7",
     "jasmine-core": "~3.8.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
