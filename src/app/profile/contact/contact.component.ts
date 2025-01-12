@@ -97,11 +97,7 @@ export class ContactComponent implements OnInit {
     if (this.contactFormData.name.invalid) {
       this.errorMessage = 'Missing name';
     } else if (this.contactFormData.phone.invalid) {
-      if (formControls?.phone?.errors?.pattern) {
-        this.errorMessage = 'Invalid phone number. Valid format: XXX-XXX-XXXX';
-      } else {
         this.errorMessage = 'Missing phone number';
-      }
     } else if (this.contactFormData.email.invalid) {
       if (formControls?.email?.errors?.pattern) {
         this.errorMessage = 'Invalid email address. Valid format: XXXXX@XXXXX.XXX';

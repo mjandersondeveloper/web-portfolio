@@ -4,7 +4,7 @@ export const PROFILE_CONSTANTS: any = {
   in agile development methodologies. Excellent communication skills, enabling effective collaboration with engineering 
   teams and business partners. Experienced in working with JavaScript and Java, utilizing Angular and SpringBoot frameworks 
   to build robust applications.`,
-  resumeDownloadUrl: 'https://drive.google.com/file/d/12CYyyYLDHjG8bK0RfZARciSg8czH9IzY/view?usp=drive_link',
+  resumeDownloadUrl: 'https://drive.google.com/file/d/1C7lFF6lNVPrG1p1Kh_mmx0rz_rtMIwdR/view?usp=drive_link',
   personalInformationData: [
     {
       title: 'Residence:',
@@ -138,6 +138,16 @@ export const PROFILE_CONSTANTS: any = {
   },
   educationData: [
     {
+      year: '2020 - 2024',
+      degreeType: `Master's of Science`,
+      degreeDetail: 'Computer Science',
+      university: 'Georgia Institute of Technology',
+      description: `Specialized in Computing Systems .
+      Enrolled in the Online Masters of Computer Science (OMSCS) program while employed at Nationwide Insurance .
+      <b>Coursework:</b> Database System Concepts & Design, Introduction to Graduate Algorithms, Machine Learning For Trading, Software Analysis & Testing, Software Architecture and Design, Software Development Process
+      `
+    },
+    {
       year: '2013 - 2017',
       degreeType: `Bachelor's of Science`,
       degreeDetail: 'Computer Science and Engineering Technology',
@@ -146,16 +156,6 @@ export const PROFILE_CONSTANTS: any = {
       <b>Coursework:</b> Comparative Programming Languages, Advanced Website Design, Computer and Network Security, Introduction to Algorithms, Object Oriented Programming and Data Structures .
       <b>Honors & Awards:</b> Dean's List - Fall 2015, Fall 2016, Spring 2017, John O. Moseley Leadership School Scholarship, Gold Award Scholarship, Nordson BUILDS Scholarship Program .
       <b>Activities & Societies:</b> Sigma Alpha Epsilon, University of Toledo Student Government, University of Toledo Student Grievance Council, InterFraternity Council
-      `
-    },
-    {
-      year: '2020 - 2024',
-      degreeType: `Master's of Science`,
-      degreeDetail: 'Computer Science',
-      university: 'Georgia Institute of Technology',
-      description: `Specialized in Computing Systems .
-      Enrolled in the Online Masters of Computer Science (OMSCS) program while employed at Nationwide Insurance .
-      <b>Coursework:</b> Database System Concepts & Design, Introduction to Graduate Algorithms, Machine Learning For Trading, Software Analysis & Testing, Software Architecture and Design, Software Development Process
       `
     }
   ],
@@ -167,7 +167,7 @@ export const PROFILE_CONSTANTS: any = {
       role: 'Specialist, Software Engineer',
       icon: 'assets/images/nationwide_logo.png',
       description: `Develop multiple webpages for Nationwide's self-servicing website using HTML, CSS, JavaScript, and the Angular framework. . 
-      Created a SpringBoot microservice enabling customers to add ID cards to their Apple/Google Wallet via Nationwide's self-service website. .
+      Created and maintain a SpringBoot microservice enabling customers to add ID cards to their Apple/Google Wallet via Nationwide's self-service website. .
       Conduct thorough unit testing with test runners such as Karma and Jasmine to ensure high-quality code. .
       Built and integrated data retrieval systems using API proxy calls within Nationwide's internet servicing application. .
       Configure Concourse pipelines to enhance project efficiency and streamline development processes.`

@@ -25,6 +25,7 @@
                                                             [ngClass]="{ 'is-invalid': contactFormData.name.invalid, 'disabled': disableForm }"
                                                             required />
                                                     </div>
+                                                    <span class="required-asterisks">*</span>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
@@ -34,13 +35,13 @@
                                                             <i class="fa fa-phone"></i>
                                                         </span>
                                                         <input class="form-control" type="tel" name="phone"
-                                                            placeholder="Phone (XXX-XXX-XXXX)"
+                                                            placeholder="Phone"
                                                             [(ngModel)]="contactFormData.phone.input"
                                                             #phone="ngModel"
                                                             [ngClass]="{ 'is-invalid': contactFormData.phone.invalid, 'disabled': disableForm }"
-                                                            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                                                             required />
                                                     </div>
+                                                    <span class="required-asterisks">*</span>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
@@ -56,6 +57,7 @@
                                                             pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
                                                             required />
                                                     </div>
+                                                    <span class="required-asterisks">*</span>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
@@ -68,6 +70,7 @@
                                                             [ngClass]="{ 'is-invalid': contactFormData.message.invalid, 'disabled': disableForm }"
                                                             required></textarea>
                                                     </div>
+                                                    <span class="required-asterisks">*</span>
                                                 </div>
                                             </div>
                                             <div class="row" *ngIf="displayErrorMessage || displaySuccessMessage">
