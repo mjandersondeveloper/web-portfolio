@@ -4,6 +4,7 @@ export interface ContactFormData {
     phone: FormInput;
     email: FormInput;
     message: FormInput;
+    test: FormInput;
 }
 
 export interface FormInput {

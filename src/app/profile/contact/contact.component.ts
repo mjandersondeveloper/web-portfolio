@@ -10,12 +10,12 @@ import { PROFILE_CONSTANTS } from '../profile-constants';
 })
 export class ContactComponent implements OnInit {
 
-  contactData: any;
   contactFormData: ContactFormData = {
     name: { input: '', invalid: false },
     phone: { input: '', invalid: false },
     email: { input: '', invalid: false },
-    message: { input: '', invalid: false }
+    message: { input: '', invalid: false },
+    test: { input: '', invalid: false }
   };
   disableForm = false;
   displayErrorMessage = false;
@@ -27,9 +27,7 @@ export class ContactComponent implements OnInit {
     private http: HttpClient,
   ) { }
 
-  ngOnInit(): void {
-    this.contactData = PROFILE_CONSTANTS.contactData;
-  }
+  ngOnInit(): void {}
   
   onSubmit(contactForm: any): void {
     const googleSheetsScriptURL = 'https://script.google.com/macros/s/AKfycbx45IpqLkb1p9VERNqoquKGIzrDIyu7gKkcLW9ejfBQ8KZv40dGU-GYEFtzkO9ddowJ/exec';
@@ -79,7 +77,8 @@ export class ContactComponent implements OnInit {
       name: { input: '', invalid: false },
       phone: { input: '', invalid: false },
       email: { input: '', invalid: false },
-      message: { input: '', invalid: false }
+      message: { input: '', invalid: false },
+      test: { input: '', invalid: false }
     }
     form.resetForm();
   }

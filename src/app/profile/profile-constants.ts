@@ -41,14 +41,14 @@ export const PROFILE_CONSTANTS: any = {
     {
       title: 'HTML/CSS Projects',
       description: 'Collection of projects made using HTML/CSS',
-      githubUrl: 'https://github.com/mjandersondeveloper/portfolio-projects/tree/web-projects',
+      githubUrl: 'https://github.com/mjandersondeveloper/portfolio-projects/tree/web-projects-html',
       imageUrl: 'assets/images/github_image.jpg',
       technology: 'HTML/CSS'
     },
     {
       title: 'Web Portfolio (HTML/CSS)',
       description: 'Personal portfolio made using HTML/CSS',
-      githubUrl: 'https://github.com/mjandersondeveloper/portfolio-projects/tree/web-portfolio',
+      githubUrl: 'https://github.com/mjandersondeveloper/portfolio-projects/tree/web-portfolio-old',
       imageUrl: 'assets/images/github_image.jpg',
       technology: 'HTML/CSS'
     },
@@ -196,16 +196,6 @@ export const PROFILE_CONSTANTS: any = {
       Developed and installed a new timeout function for an application page using JavaScript. .
       Collaborated with the COO and managers on performance enhancements for the company's applications. .
       Created, updated, and implemented data in school district databases using SQL.`
-    }
-  ],
-  contactData: [
-    {
-      title: 'Phone:',
-      description: '(330) 247-8166'
-    },
-    {
-      title: 'Email:',
-      description: 'mjandersondeveloper@gmail.com'
     }
   ]
 };

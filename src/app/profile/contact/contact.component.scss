@@ -29,9 +29,14 @@
     display: inline-block;
 }
 
-.required-asterisks {
+.required-asterisk {
     color: #e32;
     position: absolute;
     top: -15px;
     right: 5px;
+}
+
+
+.pb-3-extra {
+    padding-bottom: 2rem !important
 }
