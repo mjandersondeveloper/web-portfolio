@@ -15,7 +15,8 @@ export class ContactComponent implements OnInit {
     phone: { input: '', invalid: false },
     email: { input: '', invalid: false },
     message: { input: '', invalid: false },
-    test: { input: '', invalid: false }
+    company: { input: '' },
+    foundMe: { input: '' }
   };
   disableForm = false;
   displayErrorMessage = false;
@@ -78,7 +79,8 @@ export class ContactComponent implements OnInit {
       phone: { input: '', invalid: false },
       email: { input: '', invalid: false },
       message: { input: '', invalid: false },
-      test: { input: '', invalid: false }
+      company: { input: '' },
+      foundMe: { input: '' }
     }
     form.resetForm();
   }

@@ -6,139 +6,105 @@
                     <div class="col-md-9">
                         <div class="card mb-0" data-aos="zoom-in">
                             <div class="h4 text-center title">Contact Me</div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="card-body">
-                                        <form name="form" #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
-                                            <div class="p pb-3">
-                                                <strong>Send me a message!</strong>
-                                            </div>
-                                            <div class="row mb-3">
-                                                <div class="col">
-                                                    <div class="input-group">
-                                                        <span [ngClass]="{ 'is-invalid': contactFormData.name.invalid, 'disabled': disableForm, 'input-group-addon': true }">
-                                                            <i class="fa fa-user-circle"></i>
-                                                        </span>
-                                                        <input class="form-control" type="text" name="name"
-                                                            placeholder="Name" [(ngModel)]="contactFormData.name.input"
-                                                            #name="ngModel"
-                                                            [ngClass]="{ 'is-invalid': contactFormData.name.invalid, 'disabled': disableForm }"
-                                                            required />
-                                                    </div>
-                                                    <span class="required-asterisk">*</span>
-                                                </div>
-                                            </div>
-                                            <div class="row mb-3">
-                                                <div class="col">
-                                                    <div class="input-group">
-                                                        <span [ngClass]="{ 'is-invalid': contactFormData.phone.invalid, 'disabled': disableForm, 'input-group-addon': true }">
-                                                            <i class="fa fa-phone"></i>
-                                                        </span>
-                                                        <input class="form-control" type="tel" name="phone"
-                                                            placeholder="Phone"
-                                                            [(ngModel)]="contactFormData.phone.input"
-                                                            #phone="ngModel"
-                                                            [ngClass]="{ 'is-invalid': contactFormData.phone.invalid, 'disabled': disableForm }"
-                                                            required />
-                                                    </div>
-                                                    <span class="required-asterisk">*</span>
-                                                </div>
-                                            </div>
-                                            <div class="row mb-3">
-                                                <div class="col">
-                                                    <div class="input-group">
-                                                        <span [ngClass]="{ 'is-invalid': contactFormData.email.invalid, 'disabled': disableForm, 'input-group-addon': true }">
-                                                            <i class="fa fa-envelope"></i>
-                                                        </span>
-                                                        <input class="form-control" type="text" name="email"
-                                                            placeholder="E-mail"
-                                                            [(ngModel)]="contactFormData.email.input" #email="ngModel"
-                                                            [ngClass]="{ 'is-invalid': contactFormData.email.invalid, 'disabled': disableForm }"
-                                                            pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
-                                                            required />
-                                                    </div>
-                                                    <span class="required-asterisk">*</span>
-                                                </div>
-                                            </div>
-                                            <div class="row mb-3">
-                                                <div class="col">
-                                                    <div class="form-group">
-                                                        <textarea class="form-control" name="message"
-                                                            placeholder="Your Message"
-                                                            [(ngModel)]="contactFormData.message.input"
-                                                            #message="ngModel"
-                                                            [ngClass]="{ 'is-invalid': contactFormData.message.invalid, 'disabled': disableForm }"
-                                                            required></textarea>
-                                                    </div>
-                                                    <span class="required-asterisk">*</span>
-                                                </div>
-                                            </div>
-                                            <div class="row" *ngIf="displayErrorMessage || displaySuccessMessage">
-                                                <div class="col">
-                                                  <p [ngClass]="{ 'error-class': displayErrorMessage, 'success-class': displaySuccessMessage }">
-                                                    {{ displayErrorMessage ? errorMessage : successMessage }}
-                                                  </p>
-                                                </div>
-                                              </div>
-                                            <div class="row">
-                                                <div class="col">
-                                                    <button [ngClass]="{ 'disabled': disableForm, 'btn btn-primary stretched-btn': true }" type="submit">Send</button>
-                                                </div>
-                                            </div>
-                                        </form>
+                            <div class="card-body">
+                                <form name="form" #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+                                    <div class="p pb-3">
+                                        <strong>Send me a message!</strong>
                                     </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card-body">
-                                        <form name="form" #contactForm="ngForm">
-                                            <div class="pb-3-extra"></div>
-                                            <div class="row mb-3">
-                                                <div class="col">
-                                                    <div class="input-group">
-                                                        <span [ngClass]="{ 'is-invalid': contactFormData.name.invalid, 'disabled': disableForm, 'input-group-addon': true }">
-                                                            <i class="fa fa-user-circle"></i>
-                                                        </span>
-                                                        <input class="form-control" type="text" name="test"
-                                                            placeholder="Test" [(ngModel)]="contactFormData.test.input"
-                                                            #name="ngModel"
-                                                            [ngClass]="{ 'is-invalid': contactFormData.test.invalid, 'disabled': disableForm }"
-                                                            required />
-                                                    </div>
-                                                </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <span
+                                                    [ngClass]="{ 'is-invalid': contactFormData.name.invalid, 'disabled': disableForm, 'input-group-addon': true }">
+                                                    <i class="fa fa-user-circle"></i>
+                                                </span>
+                                                <input class="form-control" type="text" name="name" placeholder="Name"
+                                                    [(ngModel)]="contactFormData.name.input" #name="ngModel"
+                                                    [ngClass]="{ 'is-invalid': contactFormData.name.invalid, 'disabled': disableForm }"
+                                                    required />
                                             </div>
-                                            <!-- <div class="row mb-3">
-                                                <div class="col">
-                                                    <div class="input-group">
-                                                        <span [ngClass]="{ 'is-invalid': contactFormData.phone.invalid, 'disabled': disableForm, 'input-group-addon': true }">
-                                                            <i class="fa fa-phone"></i>
-                                                        </span>
-                                                        <input class="form-control" type="tel" name="phone"
-                                                            placeholder="Phone"
-                                                            [(ngModel)]="contactFormData.phone.input"
-                                                            #phone="ngModel"
-                                                            [ngClass]="{ 'is-invalid': contactFormData.phone.invalid, 'disabled': disableForm }"
-                                                            required />
-                                                    </div>
-                                                </div>
+                                            <span class="required-asterisk">*</span>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <span
+                                                    [ngClass]="{ 'is-invalid': contactFormData.phone.invalid, 'disabled': disableForm, 'input-group-addon': true }">
+                                                    <i class="fa fa-phone"></i>
+                                                </span>
+                                                <input class="form-control" type="tel" name="phone" placeholder="Phone"
+                                                    [(ngModel)]="contactFormData.phone.input" #phone="ngModel"
+                                                    [ngClass]="{ 'is-invalid': contactFormData.phone.invalid, 'disabled': disableForm }"
+                                                    required />
                                             </div>
-                                            <div class="row mb-3">
-                                                <div class="col">
-                                                    <div class="input-group">
-                                                        <span [ngClass]="{ 'is-invalid': contactFormData.email.invalid, 'disabled': disableForm, 'input-group-addon': true }">
-                                                            <i class="fa fa-envelope"></i>
-                                                        </span>
-                                                        <input class="form-control" type="text" name="email"
-                                                            placeholder="E-mail"
-                                                            [(ngModel)]="contactFormData.email.input" #email="ngModel"
-                                                            [ngClass]="{ 'is-invalid': contactFormData.email.invalid, 'disabled': disableForm }"
-                                                            pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
-                                                            required />
-                                                    </div>
-                                                </div>
-                                            </div> -->
-                                        </form>
+                                            <span class="required-asterisk">*</span>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <span
+                                                    [ngClass]="{ 'is-invalid': contactFormData.email.invalid, 'disabled': disableForm, 'input-group-addon': true }">
+                                                    <i class="fa fa-envelope"></i>
+                                                </span>
+                                                <input class="form-control" type="text" name="email"
+                                                    placeholder="E-mail" [(ngModel)]="contactFormData.email.input"
+                                                    #email="ngModel"
+                                                    [ngClass]="{ 'is-invalid': contactFormData.email.invalid, 'disabled': disableForm }"
+                                                    pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required />
+                                            </div>
+                                            <span class="required-asterisk">*</span>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <span
+                                                    [ngClass]="{ 'disabled': disableForm, 'input-group-addon': true }">
+                                                    <i class="fa fa-building"></i>
+                                                </span>
+                                                <input class="form-control" type="text" name="company" placeholder="Company"
+                                                    [(ngModel)]="contactFormData.company.input" #name="ngModel"
+                                                    [ngClass]="{ 'disabled': disableForm }"
+                                                    />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <select class="custom-select fa" id="foundMe">
+                                                    <option hidden value="">&#xf002;&nbsp;&nbsp;&nbsp;&nbsp;How'd you find me?</option>
+                                                    <option value="LinkedIn">LinkedIn</option>
+                                                    <option value="Colleague">Colleague</option>
+                                                    <option value="Application">Job application</option>
+                                                    <option value="Other">Other - specify in comments</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <!-- Leaving empty for space -->
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <textarea class="form-control" name="message" placeholder="Your Message"
+                                                    [(ngModel)]="contactFormData.message.input" #message="ngModel"
+                                                    [ngClass]="{ 'is-invalid': contactFormData.message.invalid, 'disabled': disableForm }"
+                                                    required></textarea>
+                                            </div>
+                                            <span class="required-asterisk">*</span>
+                                        </div>
                                     </div>
-                                </div>
+                                    <div class="row" *ngIf="displayErrorMessage || displaySuccessMessage">
+                                        <div class="col">
+                                            <p
+                                                [ngClass]="{ 'error-class': displayErrorMessage, 'success-class': displaySuccessMessage }">
+                                                {{ displayErrorMessage ? errorMessage : successMessage }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <button [ngClass]="{ 'disabled': disableForm, 'btn btn-primary stretched-btn': true }"
+                                                type="submit">Send</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>

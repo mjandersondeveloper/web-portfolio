@@ -4,10 +4,11 @@ export interface ContactFormData {
     phone: FormInput;
     email: FormInput;
     message: FormInput;
-    test: FormInput;
+    company: FormInput;
+    foundMe: FormInput;
 }
 
 export interface FormInput {
     input: string;
-    invalid: boolean;
+    invalid?: boolean;
 }
