@@ -59,19 +59,20 @@
                                                     <i class="fa fa-building"></i>
                                                 </span>
                                                 <input class="form-control" type="text" name="company" placeholder="Company"
-                                                    [(ngModel)]="contactFormData.company.input" #name="ngModel"
+                                                    [(ngModel)]="contactFormData.company.input" #company="ngModel"
                                                     [ngClass]="{ 'disabled': disableForm }"
                                                     />
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="input-group">
-                                                <select class="custom-select fa" id="foundMe">
-                                                    <option hidden value="">&#xf002;&nbsp;&nbsp;&nbsp;&nbsp;How'd you find me?</option>
-                                                    <option value="LinkedIn">LinkedIn</option>
-                                                    <option value="Colleague">Colleague</option>
-                                                    <option value="Application">Job application</option>
-                                                    <option value="Other">Other - specify in comments</option>
+                                                <span
+                                                    [ngClass]="{ 'disabled': disableForm, 'input-group-addon': true }">
+                                                    <i class="fa fa-search"></i>
+                                                </span>
+                                                <select #referral [ngClass]="{ 'disabled': disableForm, 'custom-select': true }" (change)="onSelected(referral.value)">
+                                                    <option hidden [selected]='resetDropdown' value="">How'd you find me?</option>
+                                                    <option *ngFor="let option of referralOptions" [value]="option.value">{{option.label}}</option>
                                                 </select>
                                             </div>
                                         </div>

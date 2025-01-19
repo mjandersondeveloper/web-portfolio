@@ -16,11 +16,29 @@ export const PROFILE_CONSTANTS: any = {
     },
     {
       title: 'Hobbies:',
-      description: 'Bowling, Gaming, Coding, Kickball'
+      description: 'I love bowling, playing video and board games, working on fun side projects, and hanging out with my wife!'
     },
     {
       title: 'Fun Fact:',
       description: 'I share the same birthday as Oprah Winfrey!'
+    }
+  ],
+  referralOptions: [
+    {
+      label: 'LinkedIn',
+      value: 'LinkedIn'
+    },
+    {
+      label: 'Colleague',
+      value: 'Colleague'
+    },
+    {
+      label: 'Job application',
+      value: 'Application'
+    },
+    {
+      label: 'Other - specify in comments',
+      value: 'Other'
     }
   ],
   projectData: [

@@ -5,7 +5,7 @@ export interface ContactFormData {
     email: FormInput;
     message: FormInput;
     company: FormInput;
-    foundMe: FormInput;
+    referral: FormInput;
 }
 
 export interface FormInput {

@@ -40,8 +40,12 @@
 .custom-select {
     width: 100%;
     border-radius: 30px;
+    border-color: #E3E3E3;
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
-.font-awesome-icon {
-    font-family: "FontAwesome";
+.custom-select:focus {
+    border-color: #E3E3E3;
 }

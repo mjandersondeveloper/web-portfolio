@@ -16,19 +16,28 @@ export class ContactComponent implements OnInit {
     email: { input: '', invalid: false },
     message: { input: '', invalid: false },
     company: { input: '' },
-    foundMe: { input: '' }
+    referral: { input: '' }
   };
   disableForm = false;
   displayErrorMessage = false;
   displaySuccessMessage = false;
   errorMessage: string;
+  referralOptions: any;
+  resetDropdown = false;
   successMessage: string;
 
   constructor(
     private http: HttpClient,
   ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.referralOptions = PROFILE_CONSTANTS.referralOptions;
+  }
+  
+  onSelected(value: string): void {
+    this.contactFormData.referral.input = value;
+    this.resetDropdown = false;
+  }
   
   onSubmit(contactForm: any): void {
     const googleSheetsScriptURL = 'https://script.google.com/macros/s/AKfycbx45IpqLkb1p9VERNqoquKGIzrDIyu7gKkcLW9ejfBQ8KZv40dGU-GYEFtzkO9ddowJ/exec';
@@ -80,8 +89,9 @@ export class ContactComponent implements OnInit {
       email: { input: '', invalid: false },
       message: { input: '', invalid: false },
       company: { input: '' },
-      foundMe: { input: '' }
+      referral: { input: '' }
     }
+    this.resetDropdown = true;
     form.resetForm();
   }
 
@@ -90,6 +100,8 @@ export class ContactComponent implements OnInit {
       name: formData.name.input,
       phone: formData.phone.input,
       email: formData.email.input,
+      company: formData.company.input || '',
+      referral: formData.referral.input || '',
       message: formData.message.input
     };
   }
