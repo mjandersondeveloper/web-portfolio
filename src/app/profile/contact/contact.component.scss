@@ -28,3 +28,24 @@
     padding: 5px 20px;
     display: inline-block;
 }
+
+.required-asterisk {
+    color: #e32;
+    position: absolute;
+    top: -15px;
+    right: 5px;
+}
+
+
+.custom-select {
+    width: 100%;
+    border-radius: 30px;
+    border-color: #E3E3E3;
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.custom-select:focus {
+    border-color: #E3E3E3;
+}

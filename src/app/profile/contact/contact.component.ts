@@ -10,17 +10,20 @@ import { PROFILE_CONSTANTS } from '../profile-constants';
 })
 export class ContactComponent implements OnInit {
 
-  contactData: any;
   contactFormData: ContactFormData = {
     name: { input: '', invalid: false },
     phone: { input: '', invalid: false },
     email: { input: '', invalid: false },
-    message: { input: '', invalid: false }
+    message: { input: '', invalid: false },
+    company: { input: '' },
+    referral: { input: '' }
   };
   disableForm = false;
   displayErrorMessage = false;
   displaySuccessMessage = false;
   errorMessage: string;
+  referralOptions: any;
+  resetDropdown = false;
   successMessage: string;
 
   constructor(
@@ -28,7 +31,12 @@ export class ContactComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.contactData = PROFILE_CONSTANTS.contactData;
+    this.referralOptions = PROFILE_CONSTANTS.referralOptions;
+  }
+  
+  onSelected(value: string): void {
+    this.contactFormData.referral.input = value;
+    this.resetDropdown = false;
   }
   
   onSubmit(contactForm: any): void {
@@ -79,8 +87,11 @@ export class ContactComponent implements OnInit {
       name: { input: '', invalid: false },
       phone: { input: '', invalid: false },
       email: { input: '', invalid: false },
-      message: { input: '', invalid: false }
+      message: { input: '', invalid: false },
+      company: { input: '' },
+      referral: { input: '' }
     }
+    this.resetDropdown = true;
     form.resetForm();
   }
 
@@ -89,6 +100,8 @@ export class ContactComponent implements OnInit {
       name: formData.name.input,
       phone: formData.phone.input,
       email: formData.email.input,
+      company: formData.company.input || '',
+      referral: formData.referral.input || '',
       message: formData.message.input
     };
   }
@@ -97,11 +110,7 @@ export class ContactComponent implements OnInit {
     if (this.contactFormData.name.invalid) {
       this.errorMessage = 'Missing name';
     } else if (this.contactFormData.phone.invalid) {
-      if (formControls?.phone?.errors?.pattern) {
-        this.errorMessage = 'Invalid phone number. Valid format: XXX-XXX-XXXX';
-      } else {
         this.errorMessage = 'Missing phone number';
-      }
     } else if (this.contactFormData.email.invalid) {
       if (formControls?.email?.errors?.pattern) {
         this.errorMessage = 'Invalid email address. Valid format: XXXXX@XXXXX.XXX';

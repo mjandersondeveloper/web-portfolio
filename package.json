@@ -4,12 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
+    "build:prod": "ng build",
+    "build:development": "ng build --watch --configuration development",
     "test": "ng test",
     "refresh": "rm -rf package-lock.json && rm -rf node_modules/ && npm i -f",
-    "deploy": "ng deploy --base-href=/web-portfolio/",
-    "build-docs": "ng build --output-path docs --base-href /web-portfolio/"
+    "build-docs": "ng build --output-path docs --base-href /web-portfolio/",
+    "deploy": "ng add angular-cli-ghpages && ng deploy --base-href=/web-portfolio/"
   },
   "private": true,
   "dependencies": {
