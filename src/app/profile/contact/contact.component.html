@@ -48,7 +48,7 @@
                                                     placeholder="E-mail" [(ngModel)]="contactFormData.email.input"
                                                     #email="ngModel"
                                                     [ngClass]="{ 'is-invalid': contactFormData.email.invalid, 'disabled': disableForm }"
-                                                    pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required />
+                                                    pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$" required />
                                             </div>
                                             <span class="required-asterisk">*</span>
                                         </div>
