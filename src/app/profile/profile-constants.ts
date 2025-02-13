@@ -43,24 +43,31 @@ export const PROFILE_CONSTANTS: any = {
   ],
   projectData: [
     {
+      title: 'Georgia Tech Projects',
+      description: 'Collection of projects I worked on at Georgia Tech',
+      githubUrl: 'https://github.com/mjandersondeveloper/portfolio-projects/tree/georgia-tech-projects',
+      imageUrl: 'assets/images/georgia_tech.png',
+      technology: 'Java, Python'
+    },
+    {
       title: 'Project Euler Exercises',
       description: 'Collection of exercises from Project Euler',
       githubUrl: 'https://github.com/mjandersondeveloper/portfolio-projects/tree/project-euler-exercises',
-      imageUrl: 'assets/images/github_image.jpg',
+      imageUrl: 'assets/images/project_euler.png',
       technology: 'Java'
     },
     {
       title: 'Algorithm Projects',
       description: 'Collection of projects that implement algorithms',
       githubUrl: 'https://github.com/mjandersondeveloper/portfolio-projects/tree/agorithm-projects',
-      imageUrl: 'assets/images/github_image.jpg',
+      imageUrl: 'assets/images/algorithms.png',
       technology: 'C++'
     },
     {
       title: 'HTML/CSS Projects',
       description: 'Collection of projects made using HTML/CSS',
       githubUrl: 'https://github.com/mjandersondeveloper/portfolio-projects/tree/web-projects-html',
-      imageUrl: 'assets/images/github_image.jpg',
+      imageUrl: 'assets/images/html_css.jpg',
       technology: 'HTML/CSS'
     },
     {
@@ -74,7 +81,7 @@ export const PROFILE_CONSTANTS: any = {
       title: 'PHP Projects',
       description: 'Collection of projects made using PHP',
       githubUrl: 'https://github.com/mjandersondeveloper/portfolio-projects/tree/php-projects',
-      imageUrl: 'assets/images/github_image.jpg',
+      imageUrl: 'assets/images/php.jpg',
       technology: 'PHP'
     }
   ],
