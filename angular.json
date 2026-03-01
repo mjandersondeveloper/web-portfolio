@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "marcus-personal-portfolio:build:production"
+              "buildTarget": "marcus-personal-portfolio:build:production"
             },
             "development": {
-              "browserTarget": "marcus-personal-portfolio:build:development"
+              "buildTarget": "marcus-personal-portfolio:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "marcus-personal-portfolio:build"
+            "buildTarget": "marcus-personal-portfolio:build"
           }
         },
         "test": {
@@ -110,8 +110,7 @@
       }
     }
   },
-  "defaultProject": "marcus-personal-portfolio",
-  "cli": {
+    "cli": {
     "analytics": false
   }
 }
