@@ -18,9 +18,7 @@ import { SplitPipe } from './split.pipe';
   imports: [
     CommonModule,
     FormsModule,
-    NgxPaginationModule
-  ],
-  declarations: [
+    NgxPaginationModule,
     ProfileComponent,
     HeaderComponent,
     FooterComponent,
@@ -33,5 +31,6 @@ import { SplitPipe } from './split.pipe';
     ProjectsComponent,
     SplitPipe
   ]
+  // No declarations for standalone components/pipes
 })
 export class ProfileModule { }

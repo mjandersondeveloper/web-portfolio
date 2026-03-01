@@ -21,7 +21,4 @@ getTestBed().initTestEnvironment(
   { teardown: { destroyAfterEach: true }},
 );
 
-// Then we find all the tests.
-const context = require.context('./', true, /\.spec\.ts$/);
-// And load the modules.
-context.keys().map(context);
+// Angular CLI will automatically discover and run all .spec.ts files in Angular 16+
