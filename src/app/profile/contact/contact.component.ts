@@ -3,10 +3,14 @@ import { ContactFormData } from '../profile.interface';
 import { HttpClient } from '@angular/common/http';
 import { PROFILE_CONSTANTS } from '../profile-constants';
 
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  styleUrls: ['./contact.component.scss'],
+  standalone: true,
+  imports: [CommonModule, FormsModule]
 })
 export class ContactComponent implements OnInit {
 

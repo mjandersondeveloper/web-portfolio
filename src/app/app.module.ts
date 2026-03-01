@@ -16,15 +16,13 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    AppComponent,
+    BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(routes, {
-    initialNavigation: 'enabled'
-}),
+      initialNavigation: 'enabledBlocking'
+    }),
     ProfileModule,
     HttpClientModule
   ],
