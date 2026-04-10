@@ -35,6 +35,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git add docs/
           git diff --quiet --cached || git commit -m "chore: rebuild docs for PR review"
+          git pull --rebase origin ${{ github.head_ref }}
           git push origin HEAD:${{ github.head_ref }}
 
       - name: Upload build artifact
