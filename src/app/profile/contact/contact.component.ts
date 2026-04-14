@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactFormData } from '../profile.interface';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { PROFILE_CONSTANTS } from '../profile-constants';
 
 import { CommonModule } from '@angular/common';
@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule]
+  imports: [CommonModule, FormsModule, HttpClientModule]
 })
 export class ContactComponent implements OnInit {
 
@@ -58,7 +58,7 @@ export class ContactComponent implements OnInit {
           console.log('Contact form data sent successfully');
           this.successMessage = 'Message sent successfully! Have a great day!';
         },
-        error: (err) => {
+        error: (err: any) => {
           console.error('Error sending contact form data:', err);
           this.displayErrorMessage = true;
           this.displaySuccessMessage = false;

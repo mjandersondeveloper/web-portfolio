@@ -4,7 +4,8 @@ import { PROFILE_CONSTANTS } from '../profile-constants';
 @Component({
   selector: 'app-intro',
   templateUrl: './intro.component.html',
-  styleUrls: ['./intro.component.scss']
+  styleUrls: ['./intro.component.scss'],
+  standalone: true
 })
 
 export class IntroComponent implements OnInit {
