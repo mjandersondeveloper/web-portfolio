@@ -4,8 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes, ExtraOptions } from '@angular/router';
 import { ProfileComponent } from './profile/profile.component';
-import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 const routes: Routes = [
   {
     path: '',
@@ -18,11 +16,9 @@ const routes: Routes = [
   imports: [
     AppComponent,
     BrowserModule,
-    BrowserAnimationsModule,
     RouterModule.forRoot(routes, {
       initialNavigation: 'enabledBlocking'
-    }),
-    HttpClientModule
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

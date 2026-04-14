@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactFormData } from '../profile.interface';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { PROFILE_CONSTANTS } from '../profile-constants';
 
 import { CommonModule } from '@angular/common';
@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, HttpClientModule]
+  imports: [CommonModule, FormsModule]
 })
 export class ContactComponent implements OnInit {
 
