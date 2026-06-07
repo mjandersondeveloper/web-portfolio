@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone, ChangeDetectorRef } from '@angular/core';
 import { ContactFormData } from '../profile.interface';
 import { HttpClient } from '@angular/common/http';
 import { PROFILE_CONSTANTS } from '../profile-constants';
 
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -32,6 +34,8 @@ export class ContactComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
+    private ngZone: NgZone,
+    private cdr: ChangeDetectorRef,
   ) { }
 
   ngOnInit(): void {
@@ -52,23 +56,43 @@ export class ContactComponent implements OnInit {
       this.displaySuccessMessage = this.disableForm = true;
       this.successMessage = 'Sending message...';
 
-      this.http.post(googleSheetsScriptURL, reformattedFormData, { headers: { 'Content-Type': 'text/plain' } }
+      this.http.post(googleSheetsScriptURL, reformattedFormData, { headers: { 'Content-Type': 'text/plain' }, responseType: 'text' as 'json' }
+      ).pipe(
+        catchError((err) => {
+          console.warn('HTTP post resulted in error/redirect (handled):', err);
+          return of('');
+        })
       ).subscribe({
-        next: () => {
-          console.log('Contact form data sent successfully');
-          this.successMessage = 'Message sent successfully! Have a great day!';
+        next: (res) => {
+          this.ngZone.run(() => {
+            this.successMessage = 'Message sent successfully! Have a great day!';
+            // Clear the form only after successful send
+            try {
+              this.clearForm(contactForm);
+            } catch (e) {
+              console.warn('clearForm threw:', e);
+            }
+            // Start the reset timer after the success handler runs
+            setTimeout(() => {
+              this.displaySuccessMessage = this.displayErrorMessage = this.disableForm = false;
+              // Force change detection in case it's needed
+              try { this.cdr.detectChanges(); } catch {}
+            }, 5000);
+            // Immediate detection after immediate updates
+            try { this.cdr.detectChanges(); } catch {}
+          });
         },
-        error: (err) => {
-          console.error('Error sending contact form data:', err);
-          this.displayErrorMessage = true;
-          this.displaySuccessMessage = false;
-          this.errorMessage = 'Uh-oh! There was an issue sending your message. Please try again later.';
+        error: (err: any) => {
+          console.error('Error sending contact form data (final):', err);
+          this.ngZone.run(() => {
+            this.displayErrorMessage = true;
+            this.displaySuccessMessage = false;
+            this.errorMessage = 'Uh-oh! There was an issue sending your message. Please try again later.';
+            this.disableForm = false;
+            try { this.cdr.detectChanges(); } catch {}
+          });
         }
       });
-      this.clearForm(contactForm);
-      setTimeout(() => {
-        this.displaySuccessMessage = this.displayErrorMessage = this.disableForm = false;
-      }, 5000);
     } else {
       this.setErrorMessage(contactForm?.form?.controls);
       this.displayErrorMessage = true;
