@@ -1,10 +1,8 @@
 export const PROFILE_CONSTANTS: any = {
-  aboutDescription: `Senior software engineer with 6+ years of experience in leveraging various tools and technologies to 
-  enhance business productivity. Proficient in software development, design, and testing, with a strong foundation 
-  in agile development methodologies. Excellent communication skills, enabling effective collaboration with engineering 
-  teams and business partners. Experienced in working with JavaScript and Java, utilizing Angular and SpringBoot frameworks 
-  to build robust applications.`,
-  resumeDownloadUrl: 'https://drive.google.com/file/d/1C7lFF6lNVPrG1p1Kh_mmx0rz_rtMIwdR/view?usp=drive_link',
+  aboutDescription: `Senior Software Engineer with 8+ years of experience delivering scalable full-stack solutions in enterprise insurance environments. 
+  Proficiency in Angular, SpringBoot, and API-driven architectures, combined with a track record of cross-functional leadership, developer mentorship, 
+  and driving process improvements through CI/CD automation.`,
+  resumeDownloadUrl: 'https://drive.google.com/file/d/14OSM7ciPj4BsSCYrJfx1Jw8c9yTHKNgB/view?usp=sharing',
   personalInformationData: [
     {
       title: 'Residence:',
@@ -191,36 +189,34 @@ export const PROFILE_CONSTANTS: any = {
       timeline: 'January 2018 - Present',
       role: 'Specialist, Software Engineer',
       icon: 'assets/images/nationwide_logo.png',
-      description: `Develop multiple webpages for Nationwide's self-servicing website using HTML, CSS, JavaScript, and the Angular framework. . 
-      Created and maintain a SpringBoot microservice enabling customers to add ID cards to their Apple/Google Wallet via Nationwide's self-service website. .
-      Conduct thorough unit testing with test runners such as Karma and Jasmine to ensure high-quality code. .
-      Built and integrated data retrieval systems using API proxy calls within Nationwide's internet servicing application. .
-      Configure Concourse pipelines to enhance project efficiency and streamline development processes.`
+      description: `Architected and delivered multiple customer-facing web applications using Angular, JavaScript, and HTML/CSS. Improving self-service capabilities for Nationwide's online insurance platform. .
+      Led the design and delivery of Apple and Google Wallet integration, enabling 100,000+ Nationwide members to add insurance ID cards to mobile wallets, which helped improve digital access across customer-facing experiences. .
+      Modernized customer-facing servicing applications by replacing legacy service integrations with newer orchestration services while preserving key business rules, billing behavior, and user experience.
+      Designed and integrated RESTful API proxy systems via Apigee to support core functionality of Nationwide's internet servicing applications. .
+      Automated deployment workflows with GitHub Action workflows that significantly increased release efficiency and reduced manual intervention across multiple project teams. .
+      Applied AI-assisted development workflows to accelerate research, prototyping, troubleshooting, and technical documentation across modernization and platform initiatives.`
     },
     {
       company: 'Nationwide Insurance',
       location: 'Columbus, OH',
-      timeline: 'May 2017 - August 2017',
-      role: 'Software Engineer Internship',
+      timeline: 'January 2018 - Present',
+      role: 'Senior, Software Engineer',
       icon: 'assets/images/nationwide_logo.png',
-      description: `Developed fixes for defective functions within the company's insurance policy application. .
-      Participated in the company's Hack-a-thon event as a Back-End SQL Developer for my team. .
-      Conducted code reviews for senior developers to ensure the efficiency of any code alterations. . 
-      Gathered, analyzed, and documented the business needs of project stakeholders. .
-      Engaged in daily team meetings using Scrum Agile methodology to assign story cards.`
+      description: `Directed development and enforcement of ODM business rules for the customer correspondence platform, ensuring regulatory compliance and process consistency across the team. .
+      Mentored, onboarded, and cross-trained incoming engineers and contractors, building team capacity and maintaining knowledge continuity. .
+      Served as lead developer on multiple high-visibility, tier-one production projects, coordinating with stakeholders to meet deadlines and high-quality standards. .
+      Gathered, analyzed, and documented stakeholder business requirements. .
+      Participated in daily Scrum team meetings to coordinate story assignments and progress.`
     },
     {
-      company: 'ProgressBook by Software Answers, Inc.',
-      location: 'Brecksville, OH',
-      timeline: 'May 2015 - May 2016',
-      role: 'Application Developer Internship',
-      icon: 'assets/images/software_answers_inc_logo.jpg',
-      description: `Specific employment dates: May 2015 - Aug. 2015 and Jan. 2016 - May 2016 .
-      Thoroughly debugged and resolved defective code within the company's application suite. .
-      Constructed a controller method to support product linking between two different applications. .
-      Developed and installed a new timeout function for an application page using JavaScript. .
-      Collaborated with the COO and managers on performance enhancements for the company's applications. .
-      Created, updated, and implemented data in school district databases using SQL.`
+      company: 'Nationwide Insurance',
+      location: 'Columbus, OH',
+      timeline: 'June 2018 - May 2010',
+      role: 'Software Engineer',
+      icon: 'assets/images/nationwide_logo.png',
+      description: `Developed IBM Operational Decision Management (ODM) business rules using a Java back-end tool. .
+      Acquired poly-skilling techniques as a developer, requirements analyst, and tester from working on various project lines. .
+      Discovered and fixed a multitude of defective ODM functions on a program run line as the sole representative of my team.`
     }
   ]
 };
