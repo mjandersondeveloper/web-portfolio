@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { PROFILE_CONSTANTS } from '../profile-constants';
 
 import { CommonModule } from '@angular/common';
@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss'],
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule]
 })
 export class SkillsComponent implements OnInit {

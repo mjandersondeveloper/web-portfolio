@@ -2,7 +2,7 @@
 
 ## Angular CLI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 20.0.6.
+This project uses [Angular CLI](https://angular.dev/tools/cli) version 22.2.6 and requires Node.js `^22.22.3`, `^24.15.0`, or `>=26.0.0`.
 
 ## Development server
 
@@ -19,6 +19,14 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Lint
+
+Run `npm run lint` to check TypeScript and Angular templates with ESLint.
+
+## GitHub Actions
+
+The CI workflow runs lint, unit tests, and a production build on branch pushes and pull requests. The deploy workflow publishes the `build-docs` output to GitHub Pages when changes are pushed to `main` or the workflow is run manually. Set the repository's Pages source to **GitHub Actions**.
 
 ## Running end-to-end tests
 

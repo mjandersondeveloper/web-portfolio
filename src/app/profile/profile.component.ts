@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { IntroComponent } from './intro/intro.component';
 import { AboutComponent } from './about/about.component';
@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss'],
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     HeaderComponent,
     IntroComponent,

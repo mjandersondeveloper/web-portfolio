@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { PROFILE_CONSTANTS } from '../profile-constants';
 import { NgxPaginationModule } from 'ngx-pagination';
 
@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, NgxPaginationModule]
 })
 export class ProjectsComponent implements OnInit {
