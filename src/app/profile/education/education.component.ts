@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { SplitPipe } from '../split.pipe';
 import { PROFILE_CONSTANTS } from '../profile-constants';
 
@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './education.component.html',
   styleUrls: ['./education.component.scss'],
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, SplitPipe]
 })
 export class EducationComponent implements OnInit {

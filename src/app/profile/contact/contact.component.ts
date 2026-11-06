@@ -1,4 +1,4 @@
-import { Component, OnInit, NgZone, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, NgZone, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 import { ContactFormData } from '../profile.interface';
 import { HttpClient } from '@angular/common/http';
 import { PROFILE_CONSTANTS } from '../profile-constants';
@@ -12,6 +12,7 @@ import { catchError } from 'rxjs/operators';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, FormsModule]
 })
 export class ContactComponent implements OnInit {
@@ -63,7 +64,7 @@ export class ContactComponent implements OnInit {
           return of('');
         })
       ).subscribe({
-        next: (res) => {
+        next: () => {
           this.ngZone.run(() => {
             this.successMessage = 'Message sent successfully! Have a great day!';
             // Clear the form only after successful send
@@ -76,10 +77,18 @@ export class ContactComponent implements OnInit {
             setTimeout(() => {
               this.displaySuccessMessage = this.displayErrorMessage = this.disableForm = false;
               // Force change detection in case it's needed
-              try { this.cdr.detectChanges(); } catch {}
+              try {
+                this.cdr.detectChanges();
+              } catch (error) {
+                console.warn('Change detection failed after the contact form reset:', error);
+              }
             }, 5000);
             // Immediate detection after immediate updates
-            try { this.cdr.detectChanges(); } catch {}
+            try {
+              this.cdr.detectChanges();
+            } catch (error) {
+              console.warn('Change detection failed after the contact form update:', error);
+            }
           });
         },
         error: (err: any) => {
@@ -89,7 +98,11 @@ export class ContactComponent implements OnInit {
             this.displaySuccessMessage = false;
             this.errorMessage = 'Uh-oh! There was an issue sending your message. Please try again later.';
             this.disableForm = false;
-            try { this.cdr.detectChanges(); } catch {}
+            try {
+              this.cdr.detectChanges();
+            } catch (error) {
+              console.warn('Change detection failed after the contact form error:', error);
+            }
           });
         }
       });

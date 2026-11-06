@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { PROFILE_CONSTANTS } from '../profile-constants';
 
 @Component({
   selector: 'app-intro',
   templateUrl: './intro.component.html',
   styleUrls: ['./intro.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: true
 })
 
